@@ -40,10 +40,8 @@ nav a:hover,nav a:focus-visible{background:var(--pink);color:#4a2420}
 .hero h1{font-size:clamp(4rem,15vw,8.5rem);font-weight:700;color:var(--ink);letter-spacing:.02em;text-shadow:4px 4px 0 var(--card),7px 7px 0 var(--pink);margin:10px 0 0}
 .sub{font:700 clamp(1rem,3.4vw,1.4rem) "Mali";letter-spacing:.25em;margin:0 0 14px;color:var(--muted)}
 .mascots-trio{display:flex;justify-content:center;align-items:flex-end;gap:clamp(6px,3vw,24px);margin:16px auto 12px;max-width:680px}
-.mascots-trio .character{width:28%;max-width:180px;height:auto;transition:transform .2s}
-.mascots-trio .character:nth-child(2){width:34%;max-width:210px;transform:scale(1.08)}
-.mascots-trio .character{animation:hop 2.4s ease-in-out infinite}
-.mascots-trio .character:nth-child(2){animation-delay:.3s}
+.mascots-trio .character{width:28%;max-width:180px;height:auto;transition:transform .2s;animation:hop 2.4s ease-in-out infinite}
+.mascots-trio .character:nth-child(2){width:34%;max-width:210px;animation-delay:.3s}
 .mascots-trio .character:nth-child(3){animation-delay:.6s}
 @keyframes hop{50%{transform:translateY(-12px)}}
 @media (prefers-reduced-motion:reduce){.mascots-trio .character{animation:none}}
@@ -51,7 +49,7 @@ nav a:hover,nav a:focus-visible{background:var(--pink);color:#4a2420}
 .pill{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:999px;padding:8px 22px;font:700 clamp(.88rem,2.8vw,1.1rem) "Mali";box-shadow:3px 3px 0 var(--line)}
 .pill b{color:var(--red);font-size:1.25em}
 .btns{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:3px solid var(--line);border-radius:999px;padding:10px 24px;font:700 1rem "Mali";text-decoration:none;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:transform .15s, background-color .15s}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:3px solid var(--line);border-radius:999px;padding:10px 24px;font:700 1rem "Mali";text-decoration:none;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:transform .15s,background-color .15s}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--line)}
 .btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--line)}
 .btn.alt{background:var(--cream);color:#4a2420}
@@ -74,21 +72,13 @@ section h2::after{content:" ♡";color:var(--red)}
 .fact b{font:700 1.2rem "Mali";display:block}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
 
-.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:16px}
-.m{padding:16px 10px;text-align:center;position:relative;overflow:hidden;transition:transform .2s}
-.m:hover{transform:translateY(-4px)}
-.m .avatar-box{width:90px;height:90px;margin:0 auto 10px;position:relative}
-.m svg{width:100%;height:100%;display:block}
-.m strong{display:block;font-size:.95rem;color:var(--ink)}.m span{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:600;background:var(--cream);color:#4a2420;border-radius:999px;padding:3px 12px;border:2px solid var(--line)}
-
-/* NÂNG CẤP STYLES THÀNH VIÊN & MODAL HỒ SƠ */
 .officers-featured{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-bottom:32px}
 .officer-card{background:linear-gradient(135deg,var(--cream) 0%,#fff 100%);border:3.5px solid var(--line);border-radius:22px;padding:16px;box-shadow:4px 4px 0 var(--line);text-align:center;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .officer-card:hover{transform:translateY(-5px);box-shadow:6px 6px 0 var(--line)}
-.officer-card .crown{position:absolute;top:-12px;right:14px;background:var(--sun);border:2px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:700;box-shadow:2px 2px 0 var(--line)}
+.officer-card .crown{position:absolute;top:-12px;right:14px;background:var(--sun);color:#4a2420;border:2px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700;box-shadow:2px 2px 0 var(--line)}
 .officer-card .stt-badge{position:absolute;top:10px;left:12px;font:700 .78rem "Mali";color:var(--muted)}
 .officer-card .avatar-wrap{width:96px;height:96px;margin:10px auto 8px;border-radius:50%;border:3px solid var(--line);overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
-.officer-card .avatar-wrap img{width:100%;height:100%;object-fit:cover}
+.officer-card .avatar-wrap img,.officer-card .avatar-wrap svg{width:100%;height:100%;object-fit:cover}
 
 .filter-bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:20px;background:var(--card);padding:14px 18px;border-radius:20px;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line)}
 .search-box{flex:1;min-width:220px;position:relative}
@@ -103,20 +93,49 @@ section h2::after{content:" ♡";color:var(--red)}
 .member-card:hover{transform:translateY(-3px);box-shadow:4.5px 4.5px 0 var(--line)}
 .member-card .stt{position:absolute;top:8px;left:10px;font:700 .75rem "Mali";color:var(--muted)}
 .member-card .avatar-box{width:76px;height:76px;margin:6px auto 8px;border-radius:50%;overflow:hidden;border:2.5px solid var(--line);background:var(--bg2);display:flex;align-items:center;justify-content:center}
-.member-card .avatar-box img{width:100%;height:100%;object-fit:cover}
+.member-card .avatar-box img,.member-card .avatar-box svg{width:100%;height:100%;object-fit:cover}
 .member-card strong{display:block;font-size:.9rem;color:var(--ink);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .member-card .role-tag{display:inline-block;margin-top:4px;font-size:.74rem;font-weight:700;background:var(--cream);color:#4a2420;border-radius:999px;padding:2px 10px;border:1.5px solid var(--line)}
 
-/* MODAL HỒ SƠ KỶ YẾU */
 .modal-overlay{position:fixed;inset:0;background:rgba(58,36,40,0.65);backdrop-filter:blur(5px);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.open{opacity:1;pointer-events:auto}
-.modal-card{background:var(--card);border:4px solid var(--line);border-radius:26px;box-shadow:8px 8px 0 var(--line);width:100%;max-width:480px;padding:26px;position:relative;transform:scale(0.92);transition:transform .2s;max-height:90vh;overflow-y:auto}
+.modal-card{background:var(--card);color:var(--ink);border:4px solid var(--line);border-radius:26px;box-shadow:8px 8px 0 var(--line);width:100%;max-width:480px;padding:26px;position:relative;transform:scale(0.92);transition:transform .2s;max-height:90vh;overflow-y:auto}
 .modal-overlay.open .modal-card{transform:scale(1)}
-.modal-close{position:absolute;top:14px;right:16px;background:var(--pink);border:2.5px solid var(--line);border-radius:50%;width:34px;height:34px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close{position:absolute;top:14px;right:16px;background:var(--pink);color:#4a2420;border:2.5px solid var(--line);border-radius:50%;width:34px;height:34px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-header{text-align:center;margin-bottom:16px}
 .modal-avatar-preview{width:110px;height:110px;border-radius:50%;border:4px solid var(--line);margin:0 auto 10px;overflow:hidden;background:#fff;position:relative;cursor:pointer}
-.modal-avatar-preview img{width:100%;height:100%;object-fit:cover}
-.modal-avatar-preview::after{content:"📸 Đổi ảnh";position:absolute;bottom:0;inset-x:0;background:rgba(107,59,53,0.8);color:#fff;font-size:.7rem;font-weight:700;padding:2px 0;text-align:center}
+.modal-avatar-preview img,.modal-avatar-preview svg{width:100%;height:100%;object-fit:cover}
+.modal-avatar-preview::after{content:"📸 Đổi ảnh";position:absolute;bottom:0;inset-x:0;background:rgba(107,59,53,0.85);color:#fff;font-size:.7rem;font-weight:700;padding:2px 0;text-align:center}
+
+.booth-container{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media (max-width:880px){.booth-container{grid-template-columns:1fr}}
+.booth-controls{display:flex;flex-direction:column;gap:16px;padding:22px}
+.drop-zone{border:3px dashed var(--line);border-radius:18px;padding:24px 16px;text-align:center;background:var(--bg2);cursor:pointer;transition:background-color .2s,border-color .2s}
+.drop-zone:hover,.drop-zone.dragover{background:#fff;border-color:var(--red)}
+.drop-zone p{margin:6px 0 0;font-size:.9rem;color:var(--muted);font-weight:500}
+.frame-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.frame-btn{background:#fff;border:2.5px solid var(--line);border-radius:14px;padding:10px;font:600 .85rem "Mali";color:#4a2420;cursor:pointer;text-align:center;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:4px}
+.frame-btn:hover{background:var(--cream)}
+.frame-btn.active{background:var(--pink);color:#4a2420;border-width:3px;box-shadow:2px 2px 0 var(--line)}
+.control-group{display:flex;flex-direction:column;gap:6px}
+.control-group label{font:700 .9rem "Mali";color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.control-group input[type="text"]{font:inherit;color:#4a2420;background:#fff;border:2.5px solid var(--line);border-radius:12px;padding:8px 12px}
+.range-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sticker-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;color:#4a2420;border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:600;cursor:pointer;user-select:none;transition:all .15s}
+.chip:hover{background:var(--cream)}
+.chip.selected{background:var(--mint);color:#fff}
+
+.canvas-wrapper{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:var(--card);position:sticky;top:80px}
+.canvas-holder{max-width:100%;width:380px;box-shadow:6px 6px 0 var(--line);border-radius:16px;overflow:hidden;border:3px solid var(--line);background:#fff}
+#boothCanvas{width:100%;height:auto;display:block;background:#fff}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:24px}
+.gallery-card{background:#fff;border:3px solid var(--line);border-radius:18px;padding:10px;box-shadow:3px 3px 0 var(--line);position:relative;display:flex;flex-direction:column;align-items:center;transition:transform .2s}
+.gallery-card:hover{transform:rotate(-1deg) scale(1.02)}
+.gallery-card img{width:100%;height:auto;border-radius:10px;border:1.5px solid var(--line);display:block}
+.gallery-card .actions{display:flex;gap:6px;width:100%;margin-top:8px}
+.gallery-card .actions button{flex:1;padding:6px;font-size:.78rem;font-family:"Mali";border-radius:10px;border:2px solid var(--line);cursor:pointer;font-weight:700;background:var(--cream);color:#4a2420}
 
 .tl{border-left:4px dotted var(--line);margin-left:12px;padding-left:28px;display:grid;gap:20px}
 .ev{position:relative;padding:16px 20px;transition:transform .2s}
@@ -131,43 +150,7 @@ section h2::after{content:" ♡";color:var(--red)}
 .nums b{font:700 2.4rem "Mali";display:block;line-height:1.05;color:var(--red)}
 .count small{display:block;margin-top:16px;opacity:.95;font-weight:500}
 
-/* PHOTO BOOTH & CANVAS SECTION */
-.booth-container{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-@media (max-width:880px){.booth-container{grid-template-columns:1fr}}
-
-.booth-controls{display:flex;flex-direction:column;gap:16px;padding:22px}
-.drop-zone{border:3px dashed var(--line);border-radius:18px;padding:24px 16px;text-align:center;background:var(--bg2);cursor:pointer;transition:background-color .2s, border-color .2s}
-.drop-zone:hover,.drop-zone.dragover{background:#fff;border-color:var(--red)}
-.drop-zone p{margin:6px 0 0;font-size:.9rem;color:var(--muted);font-weight:500}
-
-.frame-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
-.frame-btn{background:#fff;border:2.5px solid var(--line);border-radius:14px;padding:10px;font:600 .85rem "Mali";color:#4a2420;cursor:pointer;text-align:center;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:4px}
-.frame-btn:hover{background:var(--cream)}
-.frame-btn.active{background:var(--pink);color:#4a2420;border-width:3px;box-shadow:2px 2px 0 var(--line)}
-
-.control-group{display:flex;flex-direction:column;gap:6px}
-.control-group label{font:700 .9rem "Mali";color:var(--ink);display:flex;justify-content:space-between;align-items:center}
-.control-group input[type="text"]{font:inherit;color:var(--ink);background:#fff;border:2.5px solid var(--line);border-radius:12px;padding:8px 12px}
-.range-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
-.sticker-chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:#fff;border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:600;cursor:pointer;user-select:none;transition:all .15s}
-.chip:hover{background:var(--cream)}
-.chip.selected{background:var(--mint);color:#fff}
-
-.canvas-wrapper{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:var(--card);position:sticky;top:80px}
-.canvas-holder{max-width:100%;width:380px;box-shadow:6px 6px 0 var(--line);border-radius:16px;overflow:hidden;border:3px solid var(--line);background:#fff}
-#boothCanvas{width:100%;height:auto;display:block;background:#fff}
-
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:24px}
-.gallery-card{background:#fff;border:3px solid var(--line);border-radius:18px;padding:10px;box-shadow:3px 3px 0 var(--line);position:relative;display:flex;flex-direction:column;align-items:center;transition:transform .2s}
-.gallery-card:hover{transform:rotate(-1deg) scale(1.02)}
-.gallery-card img{width:100%;height:auto;border-radius:10px;border:1.5px solid var(--line);display:block}
-.gallery-card .actions{display:flex;gap:6px;width:100%;margin-top:8px}
-.gallery-card .actions button{flex:1;padding:6px;font-size:.78rem;font-family:"Mali";border-radius:10px;border:2px solid var(--line);cursor:pointer;font-weight:700}
-
-/* WALL & FORM */
-form{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
+form#f{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
 input,textarea{font:inherit;color:var(--ink);background:var(--card);border:3px solid var(--line);border-radius:16px;padding:11px 14px;width:100%}
 .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .note{padding:16px 18px;border:3px solid #6b3b35;border-radius:18px;color:#4a2420;font-size:.95rem;box-shadow:3px 3px 0 #6b3b35;overflow-wrap:anywhere;position:relative}
@@ -195,7 +178,6 @@ footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;lett
   <h1>12A3</h1>
   <p class="sub">CHÚNG TÔI LÀ MỘT GIA ĐÌNH</p>
 
-  <!-- BỘ 3 NHÂN VẬT CHIIKAWA - HACHIWARE - USAGI SVG -->
   <div class="mascots-trio" id="mascots-trio"></div>
 
   <span class="pill">Ở bên nhau thật gần, thật vui · <b>45</b> thành viên!</span>
@@ -224,36 +206,32 @@ footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;lett
   <h2>Thành viên & Ban cán sự 12A3 🌸</h2>
   <p class="lead">Đầy đủ 45 thành viên thân yêu của đại gia đình 12A3. Bấm vào từng bạn để xem hồ sơ kỷ yếu hoặc đổi ảnh đại diện nhé!</p>
 
-  <!-- BAN CÁN SỰ NỔI BẬT -->
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
     <h3 style="font-size:1.3rem;color:var(--ink)">👑 Ban Cán Sự & Đội Nguồn Sáng Tạo 💻</h3>
-    <button class="btn alt" id="btnEditRoles" style="padding:6px 16px;font-size:.85rem">⚙️ Quản lý Chức vụ</button>
+    <button class="btn alt" id="btnEditRoles" type="button" style="padding:6px 16px;font-size:.85rem">⚙️ Quản lý Chức vụ</button>
   </div>
   <div class="officers-featured" id="officersFeatured"></div>
 
-  <!-- BỘ LỌC VÀ TÌM KIẾM 45 THÀNH VIÊN -->
   <div class="filter-bar">
     <div class="search-box">
-      <input type="text" id="memberSearch" placeholder="Tìm tên hoặc STT (VD: Ý Lan, 22...)" maxlength="30">
+      <input type="text" id="memberSearch" placeholder="Tìm tên hoặc STT (VD: Ý Lan, 22, Lương...)" maxlength="30">
     </div>
     <div class="filter-chips" id="filterChips">
-      <button class="f-chip active" data-filter="all">Tất cả (45)</button>
-      <button class="f-chip" data-filter="bcs">👑 Ban cán sự</button>
-      <button class="f-chip" data-filter="g1">Tổ 1</button>
-      <button class="f-chip" data-filter="g2">Tổ 2</button>
-      <button class="f-chip" data-filter="g3">Tổ 3</button>
-      <button class="f-chip" data-filter="g4">Tổ 4</button>
+      <button class="f-chip active" type="button" data-filter="all">Tất cả (45)</button>
+      <button class="f-chip" type="button" data-filter="bcs">👑 Ban cán sự</button>
+      <button class="f-chip" type="button" data-filter="g1">Tổ 1</button>
+      <button class="f-chip" type="button" data-filter="g2">Tổ 2</button>
+      <button class="f-chip" type="button" data-filter="g3">Tổ 3</button>
+      <button class="f-chip" type="button" data-filter="g4">Tổ 4</button>
     </div>
   </div>
 
-  <!-- DANH SÁCH LƯỚI 45 HỌC SINH -->
   <div class="members-grid" id="membersGrid"></div>
 </div></section>
 
-<!-- MODAL XEM & CHỈNH SỬA HỒ SƠ THÀNH VIÊN -->
 <div class="modal-overlay" id="memberModal">
   <div class="modal-card">
-    <button class="modal-close" id="modalClose">✕</button>
+    <button class="modal-close" id="modalClose" type="button" aria-label="Đóng">✕</button>
     <div class="modal-header">
       <div class="modal-avatar-preview" id="modalAvatarTrigger" title="Nhấn để tải ảnh thật">
         <div id="modalAvatarBox" style="width:100%;height:100%"></div>
@@ -267,259 +245,750 @@ footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;lett
     <form id="modalForm" style="display:grid;gap:12px">
       <div>
         <label style="font:700 .85rem 'Mali'">Biệt danh thân mật:</label>
-        <input type="text" id="inputNickname" placeholder="VD: Lan Cún, Phú Chăm Chỉ..." maxlength="25">
+        <input type="text" id="inputNickname" placeholder="VD: Lan Cún, Lương Dev..." maxlength="25">
       </div>
       <div>
         <label style="font:700 .85rem 'Mali'">Chức vụ / Nhãn:</label>
-        <input type="text" id="inputRole" placeholder="VD: Lớp trưởng, Tổ 1, Thủ quỹ..." maxlength="25">
+        <input type="text" id="inputRole" placeholder="VD: Lớp trưởng, Người làm web..." maxlength="25">
       </div>
       <div>
         <label style="font:700 .85rem 'Mali'">Câu nói cửa miệng / Châm ngôn kỷ yếu:</label>
-        <textarea id="inputQuote" rows="2" placeholder="Nhập câu nói đáng nhớ của bạn này..." maxlength="100"></family:"Mali";border-radius:10px;border:2px solid var(--line);cursor:pointer;font-weight:700}
+        <textarea id="inputQuote" rows="2" placeholder="Nhập câu nói đáng nhớ của bạn này..." maxlength="100"></textarea>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:4px">
+        <button type="submit" class="btn mint" style="flex:1;justify-content:center">💾 Lưu Hồ Sơ</button>
+        <button type="button" id="btnResetAvatar" class="btn alt" style="padding:10px 14px;font-size:.85rem">🔄 Ảnh gốc</button>
+      </div>
+    </form>
 
-/* WALL & FORM */
-form{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
-input,textarea{font:inherit;color:var(--ink);background:var(--card);border:3px solid var(--line);border-radius:16px;padding:11px 14px;width:100%}
-.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.note{padding:16px 18px;border:3px solid #6b3b35;border-radius:18px;color:#4a2420;font-size:.95rem;box-shadow:3px 3px 0 #6b3b35;overflow-wrap:anywhere;position:relative}
-.note b{display:block;font:700 1rem "Mali";margin-top:8px}
-
-footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:.92rem;border-top:3px dashed var(--line);margin-top:40px}
-footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;letter-spacing:.2em}
-</style>
-</head>
-<body>
-
-<nav><div class="wrap"><div class="bar box">
-  <b>12A3 <span style="font-size:0.8em">♡ Chiikawa</span></b>
-  <div class="links">
-    <a href="#gioi-thieu">Giới thiệu</a>
-    <a href="#thanh-vien">Thành viên</a>
-    <a href="#photobooth">Góc ghép ảnh</a>
-    <a href="#ky-niem">Kỷ niệm</a>
-    <a href="#loi-nhan">Lời nhắn</a>
-  </div>
-</div></div></nav>
-
-<header class="hero"><div class="wrap">
-  <small>THPT HOÀNG HOA THÁM · NĂM HỌC 2026 – 2027</small>
-  <h1>12A3</h1>
-  <p class="sub">CHÚNG TÔI LÀ MỘT GIA ĐÌNH</p>
-
-  <!-- BỘ 3 NHÂN VẬT CHIIKAWA - HACHIWARE - USAGI SVG -->
-  <div class="mascots-trio" id="mascots-trio"></div>
-
-  <span class="pill">Ở bên nhau thật gần, thật vui · <b>45</b> thành viên!</span>
-  <div class="btns">
-    <a class="btn" href="#photobooth">📸 Ghép ảnh kỷ yếu</a>
-    <a class="btn alt" href="#thanh-vien">Gặp cả lớp</a>
-    <a class="btn blue" href="#loi-nhan">Để lại lời nhắn</a>
-  </div>
-</div></header>
-
-<main>
-<section id="gioi-thieu"><div class="wrap">
-  <h2>Về lớp chúng mình</h2>
-  <div class="about">
-    <p class="lead box">Chúng mình là những người bạn chung một lớp học, một sân trường và một tán phượng rực rỡ. Có đứa giỏi Toán, có đứa vẽ đẹp, có đứa lúc nào cũng mang theo đồ ăn vặt rủ cả bàn cùng ăn. Cùng nhau, 12A3 đi qua những kỳ thi căng thẳng, hội trại bùng nổ và những buổi chiều trống tiết ngập tràn tiếng cười, rồi sẽ cùng nhau tự tin bước ra thế giới rộng lớn!</p>
-    <div class="facts">
-      <div class="fact box"><b>Năm học 2026 – 2027</b><small>Năm cuối cấp đáng nhớ</small></div>
-      <div class="fact box"><b>Thầy/cô chủ nhiệm</b><small>Cô Như Quỳnh</small></div>
-      <div class="fact box"><b>Sĩ số lớp</b><small>45 Học sinh năng động</small></div>
-      <div class="fact box"><b>Khẩu hiệu 12A3</b><small>"Cùng nhau lớn lên như cây!" 🌳</small></div>
+    <div style="margin-top:16px;padding-top:14px;border-top:2px dashed var(--line)">
+      <label style="font:700 .85rem 'Mali';display:block;margin-bottom:6px">💌 Gửi lời nhắn riêng tới bạn này:</label>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="directNoteInput" placeholder="Viết lời chúc gửi bạn..." style="padding:8px 12px;font-size:.88rem;border-radius:12px">
+        <button type="button" id="btnSendDirectNote" class="btn" style="padding:8px 14px;font-size:.85rem">Gửi</button>
+      </div>
     </div>
   </div>
-</div></section>
+</div>
 
-<section id="thanh-vien" class="alt"><div class="wrap">
-  <h2>Ban Cán Sự 12A3</h2>
-  <p class="lead">Dàn hậu phương vững chắc và đáng yêu của tập thể 12A3.</p>
-  <div class="members" id="members"></div>
-</div></section>
-
-<!-- HẠNG MỤC MỚI: GÓC KỶ NIỆM & GHÉP ẢNH PHOTO BOOTH -->
 <section id="photobooth"><div class="wrap">
-  <h2>Góc kỷ niệm & Ghép ảnh 12A3</h2>
-  <p class="lead">Tải ảnh của bạn hoặc nhóm bạn thân lên, chọn khung Chiikawa & Usagi siêu cưng và ghim lên bảng kỷ niệm nhé!</p>
+  <h2>Góc Ghép Ảnh & Kỷ Yếu 12A3 ✨</h2>
+  <p class="lead">Tải ảnh chụp cùng hội bạn lên, chọn khung Chiikawa / Usagi đáng yêu, chèn sticker, lưu về máy hoặc ghim lên bảng kỷ yếu của lớp!</p>
 
   <div class="booth-container">
-    <!-- KHU VỰC BẢNG ĐIỀU KHIỂN STUDIO -->
     <div class="booth-controls box">
       <div class="drop-zone" id="dropZone">
-        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--line)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 4px;display:block"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <strong style="font-family:'Mali';font-size:1.05rem;color:var(--ink)">Kéo & thả ảnh vào đây</strong>
-        <p>hoặc nhấn để chọn ảnh từ máy tính / điện thoại (PNG, JPG)</p>
-        <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+        <span style="font-size:2rem">🖼️</span>
+        <div><strong>Nhấn để chọn ảnh</strong> hoặc kéo thả ảnh vào đây</div>
+        <p>Hỗ trợ JPG, PNG (Tự động căn chỉnh đẹp mắt)</p>
+        <input type="file" id="photoInput" accept="image/*" multiple style="display:none">
       </div>
 
       <div class="control-group">
-        <label>1. Chọn mẫu khung ảnh:</label>
-        <div class="frame-options">
-          <button class="frame-btn active" data-frame="polaroid">
-            <span>📷 Polaroid 12A3</span>
-          </button>
-          <button class="frame-btn" data-frame="usagi">
-            <span>🐰 Usagi Thỏ Vàng</span>
-          </button>
-          <button class="frame-btn" data-frame="strip">
-            <span>🎞️ Dải Phim 3 Ô</span>
-          </button>
-          <button class="frame-btn" data-frame="heart">
-            <span>💖 Trái Tim Pastel</span>
-          </button>
+        <label>🎨 Chọn khung phong cách Chiikawa & Usagi:</label>
+        <div class="frame-options" id="frameOptions">
+          <button type="button" class="frame-btn active" data-frame="polaroid"><span>📷 Polaroid 12A3</span></button>
+          <button type="button" class="frame-btn" data-frame="usagi"><span>🐰 Usagi Bunny Ears</span></button>
+          <button type="button" class="frame-btn" data-frame="strip"><span>🎞️ Dải Phim 3 Ảnh</span></button>
+          <button type="button" class="frame-btn" data-frame="heart"><span>💖 Khung Trái Tim</span></button>
         </div>
       </div>
 
       <div class="control-group">
-        <label for="captionInput">2. Chú thích trên khung:</label>
-        <input type="text" id="captionInput" value="12A3 Forever ♡ Kỷ yếu 2027" maxlength="40">
+        <label>✏️ Chú thích dưới ảnh:</label>
+        <input type="text" id="captionInput" placeholder="VD: 12A3 mãi bên nhau · Yaha!" maxlength="45" value="12A3 · Kỷ yếu thanh xuân ♡">
       </div>
 
-      <div class="control-group">
-        <label>3. Tùy chỉnh ảnh:</label>
-        <div class="range-grid">
-          <div>
-            <span style="font-size:0.8rem;font-weight:600">Phóng to / Thu nhỏ</span>
-            <input type="range" id="zoomRange" min="0.4" max="2" step="0.05" value="1" style="width:100%">
-          </div>
-          <div>
-            <span style="font-size:0.8rem;font-weight:600">Xoay nghiêng</span>
-            <input type="range" id="rotateRange" min="-30" max="30" step="1" value="0" style="width:100%">
-          </div>
+      <div class="range-grid">
+        <div class="control-group">
+          <label>Phóng to: <span id="zoomVal">100%</span></label>
+          <input type="range" id="zoomRange" min="50" max="200" value="100">
+        </div>
+        <div class="control-group">
+          <label>Xoay ảnh: <span id="rotVal">0°</span></label>
+          <input type="range" id="rotRange" min="-180" max="180" value="0">
+        </div>
+      </div>
+
+      <div class="range-grid">
+        <div class="control-group">
+          <label>Vị trí X: <span id="xVal">0</span></label>
+          <input type="range" id="xRange" min="-150" max="150" value="0">
+        </div>
+        <div class="control-group">
+          <label>Vị trí Y: <span id="yVal">0</span></label>
+          <input type="range" id="yRange" min="-150" max="150" value="0">
         </div>
       </div>
 
       <div class="control-group">
-        <label>4. Thêm Sticker trang trí:</label>
+        <label>🏷️ Sticker trang trí (Bấm để bật/tắt):</label>
         <div class="sticker-chips" id="stickerChips">
-          <div class="chip selected" data-sticker="trio">✨ Bộ Ba Chiikawa</div>
-          <div class="chip selected" data-sticker="usagiEars">🐰 Tai Thỏ Usagi</div>
-          <div class="chip" data-sticker="cap">🎓 Nón Cử Nhân</div>
-          <div class="chip selected" data-sticker="badge">🏫 Logo 12A3</div>
-          <div class="chip" data-sticker="cherry">🌸 Hoa Phượng</div>
-          <div class="chip" data-sticker="heart">💖 Trái Tim</div>
+          <span class="chip selected" data-sticker="🐰 Usagi">🐰 Usagi</span>
+          <span class="chip selected" data-sticker="🌸 Hoa Anh Đào">🌸 Hoa Anh Đào</span>
+          <span class="chip" data-sticker="🎓 Cử Nhân">🎓 Cử Nhân</span>
+          <span class="chip" data-sticker="⭐ Yaha!">⭐ Yaha!</span>
+          <span class="chip" data-sticker="🌳 Cây 12A3">🌳 Cây 12A3</span>
+          <span class="chip" data-sticker="💖 Trái Tim">💖 Trái Tim</span>
         </div>
       </div>
 
-      <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
-        <button class="btn mint" id="btnDownload" style="flex:1">💾 Tải ảnh PNG</button>
-        <button class="btn alt" id="btnPin" style="flex:1">📌 Ghim lên Bảng Lớp</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <button type="button" id="btnDownload" class="btn mint" style="flex:1;justify-content:center">⬇️ Tải Ảnh PNG</button>
+        <button type="button" id="btnPinToGallery" class="btn blue" style="flex:1;justify-content:center">📌 Ghim Bảng Kỷ Niệm</button>
       </div>
     </div>
 
-    <!-- KHU VỰC XEM TRƯỚC CANVAS -->
     <div class="canvas-wrapper box">
-      <h3 style="margin-bottom:12px;font-size:1.1rem;color:var(--ink)">Màn Hình Xem Trước</h3>
       <div class="canvas-holder">
-        <canvas id="boothCanvas" width="600" height="750"></canvas>
+        <canvas id="boothCanvas" width="600" height="720"></canvas>
       </div>
-      <small style="margin-top:8px;color:var(--muted)">Có thể kéo chuột/tay trên khung ảnh để di chuyển góc chụp!</small>
+      <p style="font-size:.82rem;color:var(--muted);margin-top:12px;text-align:center">Xem trước trực tiếp · Nhấn "Tải Ảnh PNG" để lưu về máy</p>
     </div>
   </div>
 
-  <!-- BẢNG TRƯNG BÀY KHUNG ẢNH ĐÃ GHÍM -->
-  <div style="margin-top:44px">
-    <h3>Bảng Trưng Bày Kỷ Niệm 12A3 📌</h3>
-    <p class="lead" style="margin-bottom:16px">Các bức ảnh photobooth đã được ghim lại bởi thành viên 12A3.</p>
+  <div style="margin-top:42px">
+    <h3 style="font-size:1.45rem;color:var(--ink);margin-bottom:6px">📌 Bảng Trưng Bày Ảnh Kỷ Niệm 12A3</h3>
+    <p class="lead" style="margin-bottom:14px">Những bức ảnh ghép đã ghim sẽ được lưu lại ngay trên trình duyệt của bạn.</p>
     <div class="gallery-grid" id="galleryGrid"></div>
   </div>
 </div></section>
 
 <section id="ky-niem" class="alt"><div class="wrap">
-  <h2>Hành trình năm cuối cấp</h2>
-  <p class="lead">Những cột mốc nhỏ đong đầy kỷ niệm của cả tập thể.</p>
+  <h2>Hành trình năm cuối</h2>
+  <p class="lead">Những mốc nhỏ trên đường đi của lớp.</p>
   <div class="tl">
-    <div class="ev box" style="--c:var(--mint)"><time>Tháng 9/2026</time><h3>Lễ Khai Giảng Cuối Cùng</h3><p>Gặp lại thầy cô, bạn bè, ngồi lại chỗ cũ dưới bóng mát tán phượng thân thương.</p></div>
-    <div class="ev box" style="--c:var(--red)"><time>Tháng 11/2026</time><h3>Tri Ân Thầy Cô 20/11</h3><p>Văn nghệ bùng nổ, những bó hoa tươi thắm và lời cảm ơn chân thành gửi tới Cô Như Quỳnh.</p></div>
-    <div class="ev box" style="--c:var(--blue)"><time>Tháng 3/2027</time><h3>Hội Trại 26/3 Đáng Nhớ</h3><p>Dựng lều trại, thi trò chơi dân gian, hát ca và đốt lửa trại cùng toàn thể khối 12.</p></div>
-    <div class="ev box" style="--c:var(--sun)"><time>Tháng 5/2027</time><h3>Lễ Tri Ân & Chụp Kỷ Yếu</h3><p>Buổi chụp ảnh mặc áo cử nhân, những giọt nước mắt lăn dài và những cái ôm thật chặt.</p></div>
-    <div class="ev box" style="--c:var(--pink)"><time>Tháng 6/2027</time><h3>Kỳ Thi Tốt Nghiệp THPT</h3><p>Chặng cuối 12 năm đèn sách. Chúc 45 sĩ tử 12A3 cập bến nguyện vọng 1 rực rỡ!</p></div>
+    <div class="ev box" style="--c:var(--mint)"><time>Tháng 9</time><h3>Khai giảng</h3><p>Gặp lại thầy cô, bạn bè và chỗ ngồi cũ dưới gốc cây.</p></div>
+    <div class="ev box" style="--c:var(--red)"><time>Tháng 11</time><h3>Ngày Nhà giáo Việt Nam 20/11</h3><p>Văn nghệ, hoa và lời cảm ơn gửi tới thầy cô.</p></div>
+    <div class="ev box" style="--c:var(--blue)"><time>Tháng 3</time><h3>Hội trại 26/3</h3><p>Dựng lều, thi trò chơi, đốt lửa trại cùng cả khối.</p></div>
+    <div class="ev box" style="--c:var(--sun)"><time>Tháng 5</time><h3>Lễ tri ân và trưởng thành</h3><p>Buổi chụp ảnh kỷ yếu và những cái ôm thật chặt.</p></div>
+    <div class="ev box" style="--c:var(--pink)"><time>Tháng 6</time><h3>Kỳ thi tốt nghiệp THPT</h3><p>Chặng cuối của 12 năm đi học. Cố lên cả lớp.</p></div>
   </div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
   <div class="count box">
-    <h2>Đếm ngược đến Ngày Thi Tốt Nghiệp! 🎯</h2>
-    <div class="nums">
-      <div><b id="d">0</b>ngày</div>
-      <div><b id="h">0</b>giờ</div>
-      <div><b id="mi">0</b>phút</div>
-      <div><b id="s">0</b>giây</div>
-    </div>
-    <small>Cột mốc dự kiến: 07:30 - Ngày 26/06/2027 (Cố lên 12A3 ơi, Usagi chúc cả lớp thi tốt!)</small>
+    <h2>Còn bao lâu nữa đến kỳ thi?</h2>
+    <div class="nums"><div><b id="d">0</b>ngày</div><div><b id="h">0</b>giờ</div><div><b id="mi">0</b>phút</div></div>
+    <small>Đếm ngược tới ngày 26/06/2027 (ngày ước tính, có thể sửa theo lịch thi chính thức).</small>
   </div>
 </div></section>
 
 <section id="loi-nhan" class="alt"><div class="wrap">
-  <h2>Bức tường lời nhắn ✉️</h2>
-  <p class="lead">Viết vài dòng gửi gắm tình cảm cho 12A3. Lời nhắn sẽ được lưu giữ trên trình duyệt của bạn.</p>
+  <h2>Bức tường lời nhắn</h2>
+  <p class="lead">Viết vài dòng cho lớp. Lời nhắn chỉ lưu trên máy của bạn.</p>
   <form id="f">
-    <input id="n" placeholder="Tên hoặc biệt danh của bạn" maxlength="30" required>
-    <textarea id="t" rows="3" placeholder="Bạn muốn nhắn gửi lời chúc hay kỷ niệm gì với 12A3?" maxlength="160" required></textarea>
-    <button class="btn" type="submit" style="justify-self:start">📌 Dán Lên Tường</button>
+    <input id="n" placeholder="Tên của bạn" maxlength="30" required>
+    <textarea id="t" rows="3" placeholder="Bạn muốn nhắn gì với 12A3?" maxlength="140" required></textarea>
+    <button class="btn" type="submit" style="justify-self:start">Dán lên tường</button>
   </form>
   <div class="wall" id="wall"></div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <b>12A3 · THPT HOÀNG HOA THÁM</b>
-  <span>Năm học 2026 – 2027 · Chúc tất cả chúng ta một thời thanh xuân rực rỡ!</span>
+  <b>12A3</b>
+  Trường THPT Hoàng Hoa Thám · Năm học 2026 – 2027
+  <div style="margin-top:8px;font-size:.86rem;font-weight:600;color:var(--ink)">💻 Thiết kế & phát triển bởi Nguyễn Trần Đức Lương (Tổ 4 · 12A3)</div>
 </div></footer>
 
 <script>
-/* ==========================================
-   1. BỘ TẠO MÃ SVG CHO CHIIKAWA - HACHIWARE - USAGI
-   ========================================== */
-function getMascotSVG(type, width=120, height=120) {
-  const o = 'stroke="#6b3b35" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
-  
-  // TYPE 0: CHIIKAWA (Trắng, tai tròn nhỏ, mắt tròn ngơ ngác, má hồng)
-  if (type === 0 || type === 'chiikawa') {
-    return `<svg width="${width}" height="${height}" viewBox="0 0 120 120" fill="none" xmlns="http://www.ll"></div>
-</div></section>
-</main>
-
-<footer><div class="wrap"><b>12A3</b>Trường THPT Hoàng Hoa Thám · Năm học 2026 – 2027</div></footer>
-
-<script>
-// Nhân vật gốc: tai tròn, tai dài, mầm lá
-function mascot(type,fill){
-  const o='stroke="#6b3b35" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
-  let top="";
-  if(type===0) top=`<circle cx="28" cy="36" r="14" fill="${fill}" ${o}/><circle cx="92" cy="36" r="14" fill="${fill}" ${o}/>`;
-  if(type===1) top=`<ellipse cx="42" cy="24" rx="10" ry="26" fill="${fill}" ${o}/><ellipse cx="78" cy="24" rx="10" ry="26" fill="${fill}" ${o}/><ellipse cx="42" cy="26" rx="4" ry="15" fill="#f4a9b3"/><ellipse cx="78" cy="26" rx="4" ry="15" fill="#f4a9b3"/>`;
-  if(type===2) top=`<path d="M60 40 V22" fill="none" ${o}/><path d="M60 26 C44 28 36 16 38 8 C52 8 60 16 60 26Z" fill="#3cc3a0" ${o}/><path d="M60 26 C76 28 84 16 82 8 C68 8 60 16 60 26Z" fill="#7ddcc0" ${o}/>`;
-  return `<svg viewBox="0 0 120 120" aria-hidden="true">${top}<ellipse cx="60" cy="74" rx="46" ry="38" fill="${fill}" ${o}/><circle cx="43" cy="68" r="5.5" fill="#6b3b35"/><circle cx="77" cy="68" r="5.5" fill="#6b3b35"/><circle cx="45" cy="66" r="1.8" fill="#fff"/><circle cx="79" cy="66" r="1.8" fill="#fff"/><ellipse cx="29" cy="80" rx="8" ry="5.5" fill="#f4a9b3"/><ellipse cx="91" cy="80" rx="8" ry="5.5" fill="#f4a9b3"/><path d="M53 79 Q60 88 67 79" fill="#f4a9b3" ${o} stroke-width="3"/></svg>`;
+// 1. VẼ NHÂN VẬT CHIIKAWA - HACHIWARE - USAGI SVG
+function characterSVG(kind){
+  const stroke = 'stroke="#6b3b35" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
+  if(kind === "usagi"){
+    return `<svg class="character" viewBox="0 0 130 140" aria-hidden="true">
+      <ellipse cx="44" cy="34" rx="11" ry="30" transform="rotate(-10 44 34)" fill="#fbeec5" ${stroke}/>
+      <ellipse cx="44" cy="36" rx="5" ry="18" transform="rotate(-10 44 36)" fill="#f4a9b3"/>
+      <ellipse cx="86" cy="34" rx="11" ry="30" transform="rotate(10 86 34)" fill="#fbeec5" ${stroke}/>
+      <ellipse cx="86" cy="36" rx="5" ry="18" transform="rotate(10 86 36)" fill="#f4a9b3"/>
+      <ellipse cx="65" cy="84" rx="46" ry="40" fill="#fbeec5" ${stroke}/>
+      <circle cx="47" cy="78" r="5.5" fill="#6b3b35"/>
+      <circle cx="83" cy="78" r="5.5" fill="#6b3b35"/>
+      <circle cx="49" cy="76" r="2" fill="#fff"/>
+      <circle cx="85" cy="76" r="2" fill="#fff"/>
+      <ellipse cx="34" cy="88" rx="8" ry="5" fill="#f4a9b3"/>
+      <ellipse cx="96" cy="88" rx="8" ry="5" fill="#f4a9b3"/>
+      <path d="M56 91 Q65 101 74 91 Z" fill="#f4a9b3" ${stroke} stroke-width="3"/>
+    </svg>`;
+  }
+  if(kind === "hachiware"){
+    return `<svg class="character" viewBox="0 0 130 140" aria-hidden="true">
+      <polygon points="28,62 20,28 52,46" fill="#6f9db8" ${stroke}/>
+      <polygon points="102,62 110,28 78,46" fill="#6f9db8" ${stroke}/>
+      <ellipse cx="65" cy="84" rx="46" ry="40" fill="#ffffff" ${stroke}/>
+      <path d="M22,74 C24,48 52,44 65,64 C78,44 106,48 108,74 C100,66 82,66 65,76 C48,66 30,66 22,74 Z" fill="#6f9db8" ${stroke}/>
+      <circle cx="47" cy="80" r="5.5" fill="#6b3b35"/>
+      <circle cx="83" cy="80" r="5.5" fill="#6b3b35"/>
+      <circle cx="49" cy="78" r="2" fill="#fff"/>
+      <circle cx="85" cy="78" r="2" fill="#fff"/>
+      <ellipse cx="35" cy="90" rx="7.5" ry="5" fill="#f4a9b3"/>
+      <ellipse cx="95" cy="90" rx="7.5" ry="5" fill="#f4a9b3"/>
+      <path d="M57 90 Q65 97 73 90" fill="none" ${stroke} stroke-width="3.2"/>
+    </svg>`;
+  }
+  return `<svg class="character" viewBox="0 0 130 140" aria-hidden="true">
+    <circle cx="32" cy="48" r="15" fill="#ffffff" ${stroke}/>
+    <circle cx="98" cy="48" r="15" fill="#ffffff" ${stroke}/>
+    <ellipse cx="65" cy="84" rx="46" ry="40" fill="#ffffff" ${stroke}/>
+    <circle cx="47" cy="79" r="5.5" fill="#6b3b35"/>
+    <circle cx="83" cy="79" r="5.5" fill="#6b3b35"/>
+    <circle cx="49" cy="77" r="2" fill="#fff"/>
+    <circle cx="85" cy="77" r="2" fill="#fff"/>
+    <ellipse cx="34" cy="89" rx="8" ry="5" fill="#f4a9b3"/>
+    <ellipse cx="96" cy="89" rx="8" ry="5" fill="#f4a9b3"/>
+    <path d="M58 90 Q65 96 72 90" fill="none" ${stroke} stroke-width="3.2"/>
+  </svg>`;
 }
-const fills=["#ffffff","#fbeec5","#d9f2ea","#dbe8f1","#fde0e0"];
-document.getElementById("mascots").innerHTML=mascot(0,"#ffffff")+mascot(2,"#fbeec5")+mascot(1,"#fbeec5").replace(/#fbeec5/,"#ffffff");
 
-const names=["Lê Minh Anh","Trần Thị Ý Lan","Nguyễn Thiện Phú","Hà Quỳnh Anh","Bùi Kim Ngân","Lê Tú Anh","Lê Mai Huyền Ly"];
-const roles=["Lớp trưởng","Lớp phó học tập","Bí thư","Tổ trưởng 1","Tổ trưởng 2","Tổ trưởng 3","Tổ trưởng 4"];
-document.getElementById("members").innerHTML=names.map((n,i)=>
-  `<div class="m box">${mascot(i%3,fills[i%5])}<strong>${n}</strong><span>${roles[i]}</span></div>`).join("");
+document.getElementById("mascots-trio").innerHTML =
+  characterSVG("hachiware") + characterSVG("usagi") + characterSVG("chiikawa");
 
-const target=new Date("2027-06-26T07:30:00+07:00");
-function tick(){
-  const s=Math.max(0,target-Date.now())/1000;
-  d.textContent=Math.floor(s/86400);h.textContent=Math.floor(s%86400/3600);mi.textContent=Math.floor(s%3600/60);
+// 2. DANH SÁCH 45 HỌC SINH LỚP 12A3
+const RAW_STUDENTS = [
+  {stt:1, name:"Phạm Nguyên An", g:1},
+  {stt:2, name:"Hà Quỳnh Anh", g:1},
+  {stt:3, name:"Lê Minh Anh", g:1, defaultRole:"Lớp trưởng 👑"},
+  {stt:4, name:"Lê Ngọc Minh Anh", g:1},
+  {stt:5, name:"Lê Trần Vân Anh", g:1},
+  {stt:6, name:"Lê Tú Anh", g:1},
+  {stt:7, name:"Nguyễn Phi Hoàng Anh", g:1},
+  {stt:8, name:"Nguyễn Việt Anh", g:1},
+  {stt:9, name:"Nguyễn Gia Bảo", g:1},
+  {stt:10, name:"Phạm Gia Bảo", g:1},
+  {stt:11, name:"Trần Phan Gia Bảo", g:1},
+  {stt:12, name:"Bùi Lê Diệu Châu", g:2},
+  {stt:13, name:"Đoàn Vũ Công Doanh", g:2},
+  {stt:14, name:"Thái Trần Mạnh Dũng", g:2},
+  {stt:15, name:"Phan Phú Đạt", g:2},
+  {stt:16, name:"Nguyễn Minh Đăng", g:2},
+  {stt:17, name:"Nguyễn Hồng Thái Hòa", g:2},
+  {stt:18, name:"Nguyễn Xuân Nhật Hồng", g:2},
+  {stt:19, name:"Vương Hồng Khanh", g:2},
+  {stt:20, name:"Nguyễn Chánh Khiêm", g:2},
+  {stt:21, name:"Nguyễn Trung Kiên", g:2},
+  {stt:22, name:"Nguyễn Thị Ý Lan", g:3, defaultRole:"Lớp phó học tập 📚"},
+  {stt:23, name:"Phạm Hoàng Linh", g:3},
+  {stt:24, name:"Nguyễn Hoàng Long", g:3},
+  {stt:25, name:"Nguyễn Trần Đức Lương", g:4, defaultRole:"Người làm web 💻", defaultQuote:"Code mượt, thi tốt, 12A3 rực rỡ!"},
+  {stt:26, name:"Lê Mai Huyền Ly", g:3},
+  {stt:27, name:"Nguyễn Văn Mạnh", g:3},
+  {stt:28, name:"Bùi Hoàng Bảo Ngân", g:3},
+  {stt:29, name:"Bùi Kim Ngân", g:3},
+  {stt:30, name:"Mai Thảo Ngân", g:3},
+  {stt:31, name:"Đinh Thảo Nhi", g:3},
+  {stt:32, name:"Trần Yến Nhi", g:3},
+  {stt:33, name:"Nguyễn Ngọc Quỳnh Như", g:4},
+  {stt:34, name:"Nguyễn Đình Phát", g:4},
+  {stt:35, name:"Nguyễn Thiện Phú", g:4, defaultRole:"Bí thư 🚩"},
+  {stt:36, name:"Lê Quang Minh Sơn", g:4},
+  {stt:37, name:"Nguyễn Hữu Thành", g:4},
+  {stt:38, name:"Đặng Đình Thế", g:4},
+  {stt:39, name:"Phạm Nguyễn Trúc Thi", g:4},
+  {stt:40, name:"Vũ Thị Hoài Thương", g:4},
+  {stt:41, name:"Nguyễn Quỳnh Trang", g:4},
+  {stt:42, name:"Nguyễn Lê Bảo Trân", g:4},
+  {stt:43, name:"Nguyễn Tiến Triều", g:4},
+  {stt:44, name:"Đinh Hoàng Vinh", g:4},
+  {stt:45, name:"Trương Minh Vũ", g:4}
+];
+
+const FEATURED_STTS = [3, 22, 35, 25];
+const MASCOT_KINDS = ["chiikawa", "hachiware", "usagi"];
+
+let studentProfiles = {};
+try{
+  const saved = localStorage.getItem("12a3-profiles-v1");
+  if(saved) studentProfiles = JSON.parse(saved);
+}catch(e){}
+
+function saveProfiles(){
+  try{ localStorage.setItem("12a3-profiles-v1", JSON.stringify(studentProfiles)); }catch(e){}
 }
-tick();setInterval(tick,30000);
 
-const bg=["#fde7a0","#cdeccf","#ffd2cb","#cfe8f7","#f3d6f5"];
-let notes=[{n:"Lớp 12A3",t:"Chào mừng đến với trang web của lớp mình!"}];
-try{const s=localStorage.getItem("12a3-notes");if(s)notes=JSON.parse(s)}catch(e){}
-function render(){
-  wall.innerHTML=notes.map((x,i)=>`<div class="note" style="background:${bg[i%5]};transform:rotate(${(i%3-1)*1.2}deg)"></div>`).join("");
-  [...wall.children].forEach((el,i)=>{el.textContent=notes[i].t;const b=document.createElement("b");b.textContent="— "+notes[i].n;el.appendChild(b)});
+function getStudentData(s){
+  const custom = studentProfiles[s.stt] || {};
+  return {
+    ...s,
+    nickname: custom.nickname || "",
+    role: custom.role || s.defaultRole || `Tổ ${s.g}`,
+    quote: custom.quote || s.defaultQuote || "Cùng nhau lớn lên như cây!",
+    photo: custom.photo || null
+  };
 }
-render();
-f.addEventListener("submit",e=>{
+
+function getAvatarHTML(st, idx){
+  if(st.photo){
+    return `<img src="${st.photo}" alt="${st.name}">`;
+  }
+  return characterSVG(MASCOT_KINDS[idx % 3]);
+}
+
+let currentFilter = "all";
+let currentSearch = "";
+
+function isOfficer(st){
+  return Boolean(st.defaultRole) || FEATURED_STTS.includes(st.stt) || /trưởng|phó|bí thư|web|dev|cán sự/i.test(st.role);
+}
+
+function renderOfficers(){
+  const box = document.getElementById("officersFeatured");
+  const list = RAW_STUDENTS.filter(s => FEATURED_STTS.includes(s.stt)).map(getStudentData);
+  box.innerHTML = list.map((st, idx) => `
+    <div class="officer-card" onclick="openMemberModal(${st.stt})">
+      <span class="stt-badge">#${String(st.stt).padStart(2,"0")}</span>
+      <span class="crown">${st.stt === 25 ? "💻 Web Dev" : "👑 BCS"}</span>
+      <div class="avatar-wrap">${getAvatarHTML(st, idx + 1)}</div>
+      <strong style="display:block;font-size:1rem;color:var(--ink)">${st.name}</strong>
+      <div style="margin-top:6px"><span class="role-tag" style="background:#fff;border:2px solid var(--line);border-radius:999px;padding:3px 11px;font-size:.78rem;font-weight:700;display:inline-block">${st.role}</span></div>
+      <small style="display:block;margin-top:6px;color:var(--muted);font-weight:600">Tổ ${st.g}</small>
+    </div>
+  `).join("");
+}
+
+function renderMembers(){
+  const grid = document.getElementById("membersGrid");
+  const q = currentSearch.trim().toLowerCase();
+
+  const filtered = RAW_STUDENTS.map(getStudentData).filter(st => {
+    if(currentFilter === "bcs" && !isOfficer(st)) return false;
+    if(currentFilter === "g1" && st.g !== 1) return false;
+    if(currentFilter === "g2" && st.g !== 2) return false;
+    if(currentFilter === "g3" && st.g !== 3) return false;
+    if(currentFilter === "g4" && st.g !== 4) return false;
+
+    if(!q) return true;
+    return st.name.toLowerCase().includes(q)
+      || String(st.stt).includes(q)
+      || st.role.toLowerCase().includes(q)
+      || st.nickname.toLowerCase().includes(q);
+  });
+
+  if(!filtered.length){
+    grid.innerHTML = `<div class="box" style="grid-column:1/-1;padding:24px;text-align:center;color:var(--muted)">Không tìm thấy thành viên nào khớp với "${currentSearch}".</div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((st, idx) => `
+    <div class="member-card" onclick="openMemberModal(${st.stt})">
+      <span class="stt">#${String(st.stt).padStart(2,"0")}</span>
+      <div class="avatar-box">${getAvatarHTML(st, st.stt + idx)}</div>
+      <strong title="${st.name}">${st.name}</strong>
+      ${st.nickname ? `<div style="font-size:.75rem;color:var(--muted);font-weight:600">"${st.nickname}"</div>` : ""}
+      <span class="role-tag">${st.role}</span>
+    </div>
+  `).join("");
+}
+
+// 3. MODAL HỒ SƠ THÀNH VIÊN
+const memberModal = document.getElementById("memberModal");
+const modalClose = document.getElementById("modalClose");
+const modalForm = document.getElementById("modalForm");
+const modalFileInput = document.getElementById("modalFileInput");
+const modalAvatarTrigger = document.getElementById("modalAvatarTrigger");
+let activeModalSTT = null;
+let tempModalPhoto = null;
+
+window.openMemberModal = function(stt){
+  const base = RAW_STUDENTS.find(x => x.stt === stt);
+  if(!base) return;
+  const st = getStudentData(base);
+  activeModalSTT = stt;
+  tempModalPhoto = st.photo;
+
+  document.getElementById("modalSTT").textContent = `STT #${String(st.stt).padStart(2,"0")} · Tổ ${st.g}`;
+  document.getElementById("modalName").textContent = st.name;
+  document.getElementById("modalRoleBadge").textContent = st.role;
+  document.getElementById("inputNickname").value = st.nickname;
+  document.getElementById("inputRole").value = st.role;
+  document.getElementById("inputQuote").value = st.quote;
+  document.getElementById("directNoteInput").value = "";
+
+  const box = document.getElementById("modalAvatarBox");
+  box.innerHTML = tempModalPhoto ? `<img src="${tempModalPhoto}" alt="${st.name}">` : characterSVG(MASCOT_KINDS[stt % 3]);
+
+  memberModal.classList.add("open");
+};
+
+function closeMemberModal(){
+  memberModal.classList.remove("open");
+  activeModalSTT = null;
+}
+
+modalClose.addEventListener("click", closeMemberModal);
+memberModal.addEventListener("click", e => { if(e.target === memberModal) closeMemberModal(); });
+modalAvatarTrigger.addEventListener("click", () => modalFileInput.click());
+
+modalFileInput.addEventListener("change", e => {
+  const file = e.target.files && e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    tempModalPhoto = ev.target.result;
+    document.getElementById("modalAvatarBox").innerHTML = `<img src="${tempModalPhoto}" alt="Avatar">`;
+  };
+  reader.readAsDataURL(file);
+});
+
+document.getElementById("btnResetAvatar").addEventListener("click", () => {
+  tempModalPhoto = null;
+  document.getElementById("modalAvatarBox").innerHTML = characterSVG(MASCOT_KINDS[(activeModalSTT || 1) % 3]);
+});
+
+modalForm.addEventListener("submit", e => {
   e.preventDefault();
-  notes.unshift({n:n.value.trim(),t:t.value.trim()});notes=notes.slice(0,40);
-  try{localStorage.setItem("12a3-notes",JSON.stringify(notes))}catch(e){}
-  f.reset();render();
+  if(!activeModalSTT) return;
+  studentProfiles[activeModalSTT] = {
+    nickname: document.getElementById("inputNickname").value.trim(),
+    role: document.getElementById("inputRole").value.trim() || "Thành viên",
+    quote: document.getElementById("inputQuote").value.trim(),
+    photo: tempModalPhoto
+  };
+  saveProfiles();
+  renderOfficers();
+  renderMembers();
+  closeMemberModal();
+});
+
+document.getElementById("btnEditRoles").addEventListener("click", () => {
+  openMemberModal(25);
+});
+
+document.getElementById("btnSendDirectNote").addEventListener("click", () => {
+  const input = document.getElementById("directNoteInput");
+  const text = input.value.trim();
+  const base = RAW_STUDENTS.find(x => x.stt === activeModalSTT);
+  if(!text || !base) return;
+  notes.unshift({ n: `Gửi ${base.name}`, t: text });
+  notes = notes.slice(0, 40);
+  saveNotes();
+  renderWall();
+  input.value = "";
+  closeMemberModal();
+  document.getElementById("loi-nhan").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("memberSearch").addEventListener("input", e => {
+  currentSearch = e.target.value;
+  renderMembers();
+});
+
+document.getElementById("filterChips").addEventListener("click", e => {
+  const btn = e.target.closest(".f-chip");
+  if(!btn) return;
+  document.querySelectorAll(".f-chip").forEach(c => c.classList.remove("active"));
+  btn.classList.add("active");
+  currentFilter = btn.dataset.filter;
+  renderMembers();
+});
+
+renderOfficers();
+renderMembers();
+
+// 4. GÓC GHÉP ẢNH PHOTOBOOTH CANVAS
+const canvas = document.getElementById("boothCanvas");
+const ctx = canvas.getContext("2d");
+const photoInput = document.getElementById("photoInput");
+const dropZone = document.getElementById("dropZone");
+const captionInput = document.getElementById("captionInput");
+const zoomRange = document.getElementById("zoomRange");
+const rotRange = document.getElementById("rotRange");
+const xRange = document.getElementById("xRange");
+const yRange = document.getElementById("yRange");
+
+let uploadedImg = null;
+let currentFrame = "polaroid";
+let activeStickers = new Set(["🐰 Usagi", "🌸 Hoa Anh Đào"]);
+
+function drawBooth(){
+  const W = canvas.width;
+  const H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  // Nền khung theo mẫu
+  if(currentFrame === "usagi"){
+    ctx.fillStyle = "#fbeec5";
+  }else if(currentFrame === "strip"){
+    ctx.fillStyle = "#fff5f7";
+  }else if(currentFrame === "heart"){
+    ctx.fillStyle = "#fde8ec";
+  }else{
+    ctx.fillStyle = "#fffafa";
+  }
+  ctx.fillRect(0, 0, W, H);
+
+  // Viền trang trí
+  ctx.strokeStyle = "#6b3b35";
+  ctx.lineWidth = 8;
+  ctx.strokeRect(14, 14, W - 28, H - 28);
+
+  if(currentFrame === "usagi"){
+    // Tai thỏ Usagi phía trên khung
+    ctx.fillStyle = "#fbeec5";
+    ctx.beginPath();
+    ctx.ellipse(210, 48, 22, 42, -0.2, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.ellipse(390, 48, 22, 42, 0.2, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  // Vùng ảnh
+  const imgBoxX = 52;
+  const imgBoxY = 64;
+  const imgBoxW = W - 104;
+  const imgBoxH = currentFrame === "strip" ? 460 : 470;
+
+  ctx.save();
+  ctx.beginPath();
+  if(currentFrame === "heart"){
+    const cx = W / 2, cy = 305, r = 185;
+    ctx.moveTo(cx, cy + r * 0.85);
+    ctx.bezierCurveTo(cx - r * 1.4, cy + r * 0.1, cx - r * 1.1, cy - r * 0.9, cx, cy - r * 0.35);
+    ctx.bezierCurveTo(cx + r * 1.1, cy - r * 0.9, cx + r * 1.4, cy + r * 0.1, cx, cy + r * 0.85);
+  }else{
+    ctx.roundRect(imgBoxX, imgBoxY, imgBoxW, imgBoxH, 24);
+  }
+  ctx.clip();
+
+  ctx.fillStyle = "#fdeaea";
+  ctx.fillRect(0, 0, W, H);
+
+  if(uploadedImg){
+    const scale = Number(zoomRange.value) / 100;
+    const rad = (Number(rotRange.value) * Math.PI) / 180;
+    const dx = Number(xRange.value) * 2;
+    const dy = Number(yRange.value) * 2;
+
+    const baseRatio = Math.max(imgBoxW / uploadedImg.width, imgBoxH / uploadedImg.height);
+    const drawW = uploadedImg.width * baseRatio * scale;
+    const drawH = uploadedImg.height * baseRatio * scale;
+
+    ctx.save();
+    ctx.translate(W / 2 + dx, imgBoxY + imgBoxH / 2 + dy);
+    ctx.rotate(rad);
+    ctx.drawImage(uploadedImg, -drawW / 2, -drawH / 2, drawW, drawH);
+    ctx.restore();
+  }else{
+    ctx.fillStyle = "#8a5f58";
+    ctx.font = "700 24px 'Mali', sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("Chưa có ảnh · Hãy tải ảnh lên nhé!", W / 2, imgBoxY + imgBoxH / 2 - 10);
+    ctx.font = "500 16px 'Be Vietnam Pro', sans-serif";
+    ctx.fillText("12A3 · THPT Hoàng Hoa Thám", W / 2, imgBoxY + imgBoxH / 2 + 24);
+  }
+  ctx.restore();
+
+  ctx.strokeStyle = "#6b3b35";
+  ctx.lineWidth = 4;
+  if(currentFrame !== "heart"){
+    ctx.beginPath();
+    ctx.roundRect(imgBoxX, imgBoxY, imgBoxW, imgBoxH, 24);
+    ctx.stroke();
+  }
+
+  // Sticker
+  const stickerCoords = [
+    { x: 84, y: 105, size: 42 },
+    { x: W - 84, y: 105, size: 42 },
+    { x: 92, y: imgBoxY + imgBoxH - 28, size: 38 },
+    { x: W - 92, y: imgBoxY + imgBoxH - 28, size: 38 },
+    { x: W / 2 - 120, y: 98, size: 34 },
+    { x: W / 2 + 120, y: 98, size: 34 }
+  ];
+  const chosen = [...activeStickers];
+  chosen.forEach((stText, i) => {
+    const emoji = stText.split(" ")[0];
+    const pos = stickerCoords[i % stickerCoords.length];
+    ctx.font = `${pos.size}px 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(emoji, pos.x, pos.y);
+  });
+
+  // Chú thích
+  const caption = captionInput.value.trim() || "12A3 · Kỷ yếu thanh xuân ♡";
+  ctx.fillStyle = "#6b3b35";
+  ctx.font = "700 24px 'Mali', sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(caption, W / 2, H - 86);
+
+  ctx.fillStyle = "#8a5f58";
+  ctx.font = "600 14px 'Be Vietnam Pro', sans-serif";
+  ctx.fillText("12A3 · THPT HOÀNG HOA THÁM · 2026 - 2027", W / 2, H - 50);
+}
+
+function handlePhotoFiles(files){
+  const file = files && files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = new Image();
+    img.onload = () => {
+      uploadedImg = img;
+      zoomRange.value = 100;
+      rotRange.value = 0;
+      xRange.value = 0;
+      yRange.value = 0;
+      updateSlidersLabel();
+      drawBooth();
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function updateSlidersLabel(){
+  document.getElementById("zoomVal").textContent = zoomRange.value + "%";
+  document.getElementById("rotVal").textContent = rotRange.value + "°";
+  document.getElementById("xVal").textContent = xRange.value;
+  document.getElementById("yVal").textContent = yRange.value;
+}
+
+dropZone.addEventListener("click", () => photoInput.click());
+dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.classList.add("dragover"); });
+dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+dropZone.addEventListener("drop", e => {
+  e.preventDefault();
+  dropZone.classList.remove("dragover");
+  handlePhotoFiles(e.dataTransfer.files);
+});
+photoInput.addEventListener("change", e => handlePhotoFiles(e.target.files));
+
+document.getElementById("frameOptions").addEventListener("click", e => {
+  const btn = e.target.closest(".frame-btn");
+  if(!btn) return;
+  document.querySelectorAll(".frame-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  currentFrame = btn.dataset.frame;
+  drawBooth();
+});
+
+[captionInput, zoomRange, rotRange, xRange, yRange].forEach(el => {
+  el.addEventListener("input", () => {
+    updateSlidersLabel();
+    drawBooth();
+  });
+});
+
+document.getElementById("stickerChips").addEventListener("click", e => {
+  const chip = e.target.closest(".chip");
+  if(!chip) return;
+  const key = chip.dataset.sticker;
+  if(activeStickers.has(key)){
+    activeStickers.delete(key);
+    chip.classList.remove("selected");
+  }else{
+    activeStickers.add(key);
+    chip.classList.add("selected");
+  }
+  drawBooth();
+});
+
+document.getElementById("btnDownload").addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.download = "12A3-ky-yeu-chiikawa.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+});
+
+let galleryPhotos = [];
+try{
+  const g = localStorage.getItem("12a3-gallery-v1");
+  if(g) galleryPhotos = JSON.parse(g);
+}catch(e){}
+
+function renderGallery(){
+  const grid = document.getElementById("galleryGrid");
+  if(!galleryPhotos.length){
+    grid.innerHTML = `<div class="box" style="grid-column:1/-1;padding:20px;text-align:center;color:var(--muted)">Chưa có ảnh nào được ghim. Hãy ghép ảnh và bấm "📌 Ghim Bảng Kỷ Niệm" nhé!</div>`;
+    return;
+  }
+  grid.innerHTML = galleryPhotos.map((src, idx) => `
+    <div class="gallery-card">
+      <img src="${src}" alt="Ảnh kỷ yếu 12A3 #${idx + 1}">
+      <div class="actions">
+        <button type="button" onclick="downloadGalleryItem(${idx})">⬇️ Tải</button>
+        <button type="button" onclick="removeGalleryItem(${idx})">🗑️ Xóa</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+window.downloadGalleryItem = function(idx){
+  const src = galleryPhotos[idx];
+  if(!src) return;
+  const a = document.createElement("a");
+  a.href = src;
+  a.download = `12A3-ky-niem-${idx + 1}.png`;
+  a.click();
+};
+
+window.removeGalleryItem = function(idx){
+  galleryPhotos.splice(idx, 1);
+  try{ localStorage.setItem("12a3-gallery-v1", JSON.stringify(galleryPhotos)); }catch(e){}
+  renderGallery();
+};
+
+document.getElementById("btnPinToGallery").addEventListener("click", () => {
+  const dataUrl = canvas.toDataURL("image/png");
+  galleryPhotos.unshift(dataUrl);
+  galleryPhotos = galleryPhotos.slice(0, 12);
+  try{ localStorage.setItem("12a3-gallery-v1", JSON.stringify(galleryPhotos)); }catch(e){}
+  renderGallery();
+});
+
+drawBooth();
+renderGallery();
+
+// 5. ĐẾM NGƯỢC KỲ THI 2027
+const target = new Date("2027-06-26T07:30:00+07:00");
+function tick(){
+  const s = Math.max(0, target - Date.now()) / 1000;
+  d.textContent = Math.floor(s / 86400);
+  h.textContent = Math.floor(s % 86400 / 3600);
+  mi.textContent = Math.floor(s % 3600 / 60);
+}
+tick();
+setInterval(tick, 30000);
+
+// 6. BỨC TƯỜNG LỜI NHẮN
+const bg = ["#fde7a0", "#cdeccf", "#ffd2cb", "#cfe8f7", "#f3d6f5"];
+let notes = [{ n: "Lớp 12A3", t: "Chào mừng đến với trang web kỷ yếu của lớp mình! Yaha!" }];
+try{
+  const s = localStorage.getItem("12a3-notes");
+  if(s) notes = JSON.parse(s);
+}catch(e){}
+
+function saveNotes(){
+  try{ localStorage.setItem("12a3-notes", JSON.stringify(notes)); }catch(e){}
+}
+
+function renderWall(){
+  wall.innerHTML = notes.map((x, i) =>
+    `<div class="note" style="background:${bg[i % 5]};transform:rotate(${(i % 3 - 1) * 1.2}deg)"></div>`
+  ).join("");
+  [...wall.children].forEach((el, i) => {
+    el.textContent = notes[i].t;
+    const b = document.createElement("b");
+    b.textContent = "— " + notes[i].n;
+    el.appendChild(b);
+  });
+}
+
+renderWall();
+
+f.addEventListener("submit", e => {
+  e.preventDefault();
+  notes.unshift({ n: n.value.trim(), t: t.value.trim() });
+  notes = notes.slice(0, 40);
+  saveNotes();
+  f.reset();
+  renderWall();
 });
 </script>
 </body>
