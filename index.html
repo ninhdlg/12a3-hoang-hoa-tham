@@ -1,11 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>12A3 · THPT Hoàng Hoa Thám</title>
+<title>12A3 · THPT Hoàng Hoa Thám & Chiikawa Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f9d3d3; --bg2:#fdeaea; --ink:#6b3b35; --muted:#8a5f58; --card:#fffafa; --line:#6b3b35;
@@ -16,143 +17,319 @@
   :root:not([data-theme="light"]){--bg:#3a2428;--bg2:#47292f;--ink:#fbe3e0;--muted:#d8aaa6;--card:#52323a;--line:#f3b8b8}
 }
 :root[data-theme="dark"]{--bg:#3a2428;--bg2:#47292f;--ink:#fbe3e0;--muted:#d8aaa6;--card:#52323a;--line:#f3b8b8}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
 *{box-sizing:border-box}
 body{margin:0;color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;line-height:1.65;overflow-x:hidden;
   background:var(--bg) radial-gradient(circle,rgba(255,255,255,.55) 2.5px,transparent 3px) 0 0/26px 26px}
-h1,h2,h3{font-family:"Mali","Be Vietnam Pro",cursive;line-height:1.15;margin:0}
+h1,h2,h3,h4{font-family:"Mali","Be Vietnam Pro",cursive;line-height:1.2;margin:0}
 a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .box{background:var(--card);border:3px solid var(--line);border-radius:22px;box-shadow:4px 4px 0 var(--line)}
 
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding:10px 0}
+nav{position:sticky;top:0;z-index:50;padding:10px 0;background:rgba(249,211,211,0.85);backdrop-filter:blur(8px)}
 nav .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between}
-nav .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:8px 14px 8px 18px;border-radius:999px}
-nav b{font:700 1.3rem "Mali";color:var(--red)}
-nav div{display:flex;gap:6px;overflow-x:auto}
-nav a{text-decoration:none;font-size:.9rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
+nav .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:8px 14px 8px 18px;border-radius:999px;background:var(--card)}
+nav b{font:700 1.3rem "Mali";color:var(--red);display:flex;align-items:center;gap:6px}
+nav div.links{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav div.links::-webkit-scrollbar{display:none}
+nav a{text-decoration:none;font-size:.9rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap;transition:all .15s}
 nav a:hover,nav a:focus-visible{background:var(--pink);color:#4a2420}
 
 .hero{padding:34px 0 20px;text-align:center}
-.hero small{font:700 1rem "Mali";letter-spacing:.12em;color:var(--mint)}
-.hero h1{font-size:clamp(4.2rem,17vw,9rem);font-weight:700;color:var(--ink);letter-spacing:.02em;text-shadow:4px 4px 0 var(--card),6px 6px 0 var(--pink)}
-.sub{font:700 clamp(1rem,3.4vw,1.4rem) "Mali";letter-spacing:.3em;margin:0 0 8px;color:var(--muted)}
-.mascots{display:flex;justify-content:center;align-items:flex-end;gap:clamp(0px,2vw,20px);margin:16px auto 8px;max-width:640px}
-.mascots svg{width:30%;height:auto}
-.mascots svg:nth-child(2){width:34%;transform:translateY(-8px)}
-.mascots svg{animation:hop 2.4s ease-in-out infinite}
-.mascots svg:nth-child(2){animation-delay:.3s}.mascots svg:nth-child(3){animation-delay:.6s}
-@keyframes hop{50%{margin-bottom:10px}}
-@media (prefers-reduced-motion:reduce){.mascots svg{animation:none}}
-.pill{display:inline-block;background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:999px;padding:8px 22px;font:700 clamp(.9rem,3vw,1.15rem) "Mali";box-shadow:3px 3px 0 var(--line)}
-.pill b{color:var(--mint);font-size:1.3em}
+.hero small{font:700 1rem "Mali";letter-spacing:.12em;color:var(--mint);background:var(--card);padding:4px 14px;border-radius:999px;border:2px solid var(--line)}
+.hero h1{font-size:clamp(4rem,15vw,8.5rem);font-weight:700;color:var(--ink);letter-spacing:.02em;text-shadow:4px 4px 0 var(--card),7px 7px 0 var(--pink);margin:10px 0 0}
+.sub{font:700 clamp(1rem,3.4vw,1.4rem) "Mali";letter-spacing:.25em;margin:0 0 14px;color:var(--muted)}
+.mascots-trio{display:flex;justify-content:center;align-items:flex-end;gap:clamp(6px,3vw,24px);margin:16px auto 12px;max-width:680px}
+.mascots-trio .character{width:28%;max-width:180px;height:auto;transition:transform .2s}
+.mascots-trio .character:nth-child(2){width:34%;max-width:210px;transform:scale(1.08)}
+.mascots-trio .character{animation:hop 2.4s ease-in-out infinite}
+.mascots-trio .character:nth-child(2){animation-delay:.3s}
+.mascots-trio .character:nth-child(3){animation-delay:.6s}
+@keyframes hop{50%{transform:translateY(-12px)}}
+@media (prefers-reduced-motion:reduce){.mascots-trio .character{animation:none}}
+
+.pill{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:999px;padding:8px 22px;font:700 clamp(.88rem,2.8vw,1.1rem) "Mali";box-shadow:3px 3px 0 var(--line)}
+.pill b{color:var(--red);font-size:1.25em}
 .btns{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;background:var(--red);color:#fff;border:3px solid var(--line);border-radius:999px;padding:10px 24px;font:700 1rem "Mali";text-decoration:none;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:transform .15s}
-.btn:hover{transform:translate(-1px,-1px)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:3px solid var(--line);border-radius:999px;padding:10px 24px;font:700 1rem "Mali";text-decoration:none;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:transform .15s, background-color .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--line)}
+.btn:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--line)}
 .btn.alt{background:var(--cream);color:#4a2420}
+.btn.blue{background:var(--blue);color:#fff}
+.btn.mint{background:var(--mint);color:#fff}
 
 section{padding:56px 0}
 section.alt{background:var(--bg2);border-block:3px dashed var(--line)}
-section h2{font-size:clamp(1.9rem,5vw,2.7rem);margin-bottom:6px}
+section h2{font-size:clamp(1.9rem,5vw,2.7rem);margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 section h2::after{content:" ♡";color:var(--red)}
-.lead{color:var(--muted);max-width:56ch;margin:0 0 26px}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 26px;font-size:1.02rem}
+
 .about{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
-.about p.lead{max-width:none;font-size:1.05rem;padding:20px 22px}
+.about p.lead{max-width:none;font-size:1.05rem;padding:22px 24px;line-height:1.75}
 .facts{display:grid;gap:12px}
-.fact{padding:12px 18px}
+.fact{padding:14px 18px;color:#4a2420;transition:transform .2s}
+.fact:hover{transform:translateX(4px)}
 .fact:nth-child(1){background:var(--cream)}.fact:nth-child(2){background:#d9f2ea}.fact:nth-child(3){background:#dbe8f1}.fact:nth-child(4){background:#fde0e0}
-.fact{color:#4a2420}.fact small{color:#7a504a}
+.fact small{color:#7a504a;font-weight:600}
 .fact b{font:700 1.2rem "Mali";display:block}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
 
-.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
-.m{padding:14px 10px 16px;text-align:center}
-.m svg{width:80px;height:80px;display:block;margin:0 auto 6px}
-.m strong{display:block;font-size:.95rem}.m span{display:inline-block;margin-top:4px;font-size:.78rem;font-weight:600;background:var(--cream);color:#4a2420;border-radius:999px;padding:2px 12px;border:2px solid var(--line)}
+.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:16px}
+.m{padding:16px 10px;text-align:center;position:relative;overflow:hidden;transition:transform .2s}
+.m:hover{transform:translateY(-4px)}
+.m .avatar-box{width:90px;height:90px;margin:0 auto 10px;position:relative}
+.m svg{width:100%;height:100%;display:block}
+.m strong{display:block;font-size:.95rem;color:var(--ink)}.m span{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:600;background:var(--cream);color:#4a2420;border-radius:999px;padding:3px 12px;border:2px solid var(--line)}
 
 .tl{border-left:4px dotted var(--line);margin-left:12px;padding-left:28px;display:grid;gap:20px}
-.ev{position:relative;padding:14px 20px}
-.ev::before{content:"";position:absolute;left:-43px;top:18px;width:20px;height:20px;border-radius:50%;background:var(--c);border:3px solid var(--line)}
-.ev h3{font-size:1.2rem}.ev time{font-size:.82rem;color:var(--muted);font-weight:600}.ev p{margin:4px 0 0}
+.ev{position:relative;padding:16px 20px;transition:transform .2s}
+.ev:hover{transform:translateX(4px)}
+.ev::before{content:"";position:absolute;left:-43px;top:20px;width:22px;height:22px;border-radius:50%;background:var(--c);border:3.5px solid var(--line)}
+.ev h3{font-size:1.25rem;color:var(--ink)}.ev time{font-size:.85rem;color:var(--muted);font-weight:700;letter-spacing:.05em}.ev p{margin:6px 0 0}
 
-.count{background:var(--blue);color:#fff;padding:32px 24px;text-align:center}
-.count h2{color:#fff}.count h2::after{content:""}
-.nums{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-.nums div{background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:20px;min-width:92px;padding:10px;font-weight:600}
-.nums b{font:700 2.3rem "Mali";display:block;line-height:1.1;color:var(--red)}
-.count small{display:block;margin-top:14px;opacity:.95}
+.count{background:var(--blue);color:#fff;padding:36px 24px;text-align:center;position:relative;overflow:hidden}
+.count h2{color:#fff;justify-content:center}.count h2::after{content:""}
+.nums{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.nums div{background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:20px;min-width:96px;padding:12px 8px;font-weight:600;box-shadow:3px 3px 0 rgba(0,0,0,0.15)}
+.nums b{font:700 2.4rem "Mali";display:block;line-height:1.05;color:var(--red)}
+.count small{display:block;margin-top:16px;opacity:.95;font-weight:500}
 
+/* PHOTO BOOTH & CANVAS SECTION */
+.booth-container{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media (max-width:880px){.booth-container{grid-template-columns:1fr}}
+
+.booth-controls{display:flex;flex-direction:column;gap:16px;padding:22px}
+.drop-zone{border:3px dashed var(--line);border-radius:18px;padding:24px 16px;text-align:center;background:var(--bg2);cursor:pointer;transition:background-color .2s, border-color .2s}
+.drop-zone:hover,.drop-zone.dragover{background:#fff;border-color:var(--red)}
+.drop-zone p{margin:6px 0 0;font-size:.9rem;color:var(--muted);font-weight:500}
+
+.frame-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.frame-btn{background:#fff;border:2.5px solid var(--line);border-radius:14px;padding:10px;font:600 .85rem "Mali";color:#4a2420;cursor:pointer;text-align:center;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:4px}
+.frame-btn:hover{background:var(--cream)}
+.frame-btn.active{background:var(--pink);color:#4a2420;border-width:3px;box-shadow:2px 2px 0 var(--line)}
+
+.control-group{display:flex;flex-direction:column;gap:6px}
+.control-group label{font:700 .9rem "Mali";color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.control-group input[type="text"]{font:inherit;color:var(--ink);background:#fff;border:2.5px solid var(--line);border-radius:12px;padding:8px 12px}
+.range-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.sticker-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:600;cursor:pointer;user-select:none;transition:all .15s}
+.chip:hover{background:var(--cream)}
+.chip.selected{background:var(--mint);color:#fff}
+
+.canvas-wrapper{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:var(--card);position:sticky;top:80px}
+.canvas-holder{max-width:100%;width:380px;box-shadow:6px 6px 0 var(--line);border-radius:16px;overflow:hidden;border:3px solid var(--line);background:#fff}
+#boothCanvas{width:100%;height:auto;display:block;background:#fff}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:24px}
+.gallery-card{background:#fff;border:3px solid var(--line);border-radius:18px;padding:10px;box-shadow:3px 3px 0 var(--line);position:relative;display:flex;flex-direction:column;align-items:center;transition:transform .2s}
+.gallery-card:hover{transform:rotate(-1deg) scale(1.02)}
+.gallery-card img{width:100%;height:auto;border-radius:10px;border:1.5px solid var(--line);display:block}
+.gallery-card .actions{display:flex;gap:6px;width:100%;margin-top:8px}
+.gallery-card .actions button{flex:1;padding:6px;font-size:.78rem;font-family:"Mali";border-radius:10px;border:2px solid var(--line);cursor:pointer;font-weight:700}
+
+/* WALL & FORM */
 form{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
 input,textarea{font:inherit;color:var(--ink);background:var(--card);border:3px solid var(--line);border-radius:16px;padding:11px 14px;width:100%}
 .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.note{padding:16px 18px;border:3px solid #6b3b35;border-radius:18px;color:#4a2420;font-size:.95rem;box-shadow:3px 3px 0 #6b3b35;overflow-wrap:anywhere}
+.note{padding:16px 18px;border:3px solid #6b3b35;border-radius:18px;color:#4a2420;font-size:.95rem;box-shadow:3px 3px 0 #6b3b35;overflow-wrap:anywhere;position:relative}
 .note b{display:block;font:700 1rem "Mali";margin-top:8px}
-footer{padding:30px 0 44px;text-align:center;color:var(--muted);font-size:.92rem}
-footer b{font-family:"Mali";font-size:1.15rem;color:var(--ink);display:block;letter-spacing:.2em}
+
+footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:.92rem;border-top:3px dashed var(--line);margin-top:40px}
+footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;letter-spacing:.2em}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><div class="bar box"><b>12A3</b><div><a href="#gioi-thieu">Giới thiệu</a><a href="#thanh-vien">Thành viên</a><a href="#ky-niem">Kỷ niệm</a><a href="#loi-nhan">Lời nhắn</a></div></div></div></nav>
+
+<nav><div class="wrap"><div class="bar box">
+  <b>12A3 <span style="font-size:0.8em">♡ Chiikawa</span></b>
+  <div class="links">
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#thanh-vien">Thành viên</a>
+    <a href="#photobooth">Góc ghép ảnh</a>
+    <a href="#ky-niem">Kỷ niệm</a>
+    <a href="#loi-nhan">Lời nhắn</a>
+  </div>
+</div></div></nav>
 
 <header class="hero"><div class="wrap">
-  <small>THPT HOÀNG HOA THÁM</small>
+  <small>THPT HOÀNG HOA THÁM · NĂM HỌC 2026 – 2027</small>
   <h1>12A3</h1>
-  <p class="sub">Năm cuối cấp</p>
-  <div class="mascots" id="mascots"></div>
-  <span class="pill">Ở bên nhau thật gần, thật vui · <b>45</b> bạn!</span>
-  <div class="btns"><a class="btn" href="#thanh-vien">Gặp cả lớp</a><a class="btn alt" href="#loi-nhan">Để lại lời nhắn</a></div>
+  <p class="sub">CHÚNG TÔI LÀ MỘT GIA ĐÌNH</p>
+
+  <!-- BỘ 3 NHÂN VẬT CHIIKAWA - HACHIWARE - USAGI SVG -->
+  <div class="mascots-trio" id="mascots-trio"></div>
+
+  <span class="pill">Ở bên nhau thật gần, thật vui · <b>45</b> thành viên!</span>
+  <div class="btns">
+    <a class="btn" href="#photobooth">📸 Ghép ảnh kỷ yếu</a>
+    <a class="btn alt" href="#thanh-vien">Gặp cả lớp</a>
+    <a class="btn blue" href="#loi-nhan">Để lại lời nhắn</a>
+  </div>
 </div></header>
 
 <main>
 <section id="gioi-thieu"><div class="wrap">
-  <h2>Về lớp mình</h2>
+  <h2>Về lớp chúng mình</h2>
   <div class="about">
-    <p class="lead box">Chúng mình là những người bạn chung một lớp học, một sân trường và một tán phượng. Có đứa giỏi Toán, có đứa vẽ đẹp, có đứa lúc nào cũng mang theo đồ ăn vặt. Cùng nhau, 12A3 đi qua kỳ thi, hội trại và những buổi chiều trống tiết, rồi sẽ cùng nhau bước ra khỏi cổng trường.</p>
+    <p class="lead box">Chúng mình là những người bạn chung một lớp học, một sân trường và một tán phượng rực rỡ. Có đứa giỏi Toán, có đứa vẽ đẹp, có đứa lúc nào cũng mang theo đồ ăn vặt rủ cả bàn cùng ăn. Cùng nhau, 12A3 đi qua những kỳ thi căng thẳng, hội trại bùng nổ và những buổi chiều trống tiết ngập tràn tiếng cười, rồi sẽ cùng nhau tự tin bước ra thế giới rộng lớn!</p>
     <div class="facts">
-      <div class="fact box"><b>Năm học 2026 – 2027</b><small>Năm cuối cấp</small></div>
+      <div class="fact box"><b>Năm học 2026 – 2027</b><small>Năm cuối cấp đáng nhớ</small></div>
       <div class="fact box"><b>Thầy/cô chủ nhiệm</b><small>Cô Như Quỳnh</small></div>
-      <div class="fact box"><b>Sĩ số</b><small>45</small></div>
-      <div class="fact box"><b>Khẩu hiệu</b><small>Cùng nhau lớn lên như cây</small></div>
+      <div class="fact box"><b>Sĩ số lớp</b><small>45 Học sinh năng động</small></div>
+      <div class="fact box"><b>Khẩu hiệu 12A3</b><small>"Cùng nhau lớn lên như cây!" 🌳</small></div>
     </div>
   </div>
 </div></section>
 
 <section id="thanh-vien" class="alt"><div class="wrap">
-  <h2>Thành viên</h2>
-  <p class="lead">Dưới đây là ban cán sự lớp 12A3.</p>
+  <h2>Ban Cán Sự 12A3</h2>
+  <p class="lead">Dàn hậu phương vững chắc và đáng yêu của tập thể 12A3.</p>
   <div class="members" id="members"></div>
 </div></section>
 
-<section id="ky-niem"><div class="wrap">
-  <h2>Hành trình năm cuối</h2>
-  <p class="lead">Những mốc nhỏ trên đường đi của lớp.</p>
+<!-- HẠNG MỤC MỚI: GÓC KỶ NIỆM & GHÉP ẢNH PHOTO BOOTH -->
+<section id="photobooth"><div class="wrap">
+  <h2>Góc kỷ niệm & Ghép ảnh 12A3</h2>
+  <p class="lead">Tải ảnh của bạn hoặc nhóm bạn thân lên, chọn khung Chiikawa & Usagi siêu cưng và ghim lên bảng kỷ niệm nhé!</p>
+
+  <div class="booth-container">
+    <!-- KHU VỰC BẢNG ĐIỀU KHIỂN STUDIO -->
+    <div class="booth-controls box">
+      <div class="drop-zone" id="dropZone">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--line)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 4px;display:block"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <strong style="font-family:'Mali';font-size:1.05rem;color:var(--ink)">Kéo & thả ảnh vào đây</strong>
+        <p>hoặc nhấn để chọn ảnh từ máy tính / điện thoại (PNG, JPG)</p>
+        <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+      </div>
+
+      <div class="control-group">
+        <label>1. Chọn mẫu khung ảnh:</label>
+        <div class="frame-options">
+          <button class="frame-btn active" data-frame="polaroid">
+            <span>📷 Polaroid 12A3</span>
+          </button>
+          <button class="frame-btn" data-frame="usagi">
+            <span>🐰 Usagi Thỏ Vàng</span>
+          </button>
+          <button class="frame-btn" data-frame="strip">
+            <span>🎞️ Dải Phim 3 Ô</span>
+          </button>
+          <button class="frame-btn" data-frame="heart">
+            <span>💖 Trái Tim Pastel</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="captionInput">2. Chú thích trên khung:</label>
+        <input type="text" id="captionInput" value="12A3 Forever ♡ Kỷ yếu 2027" maxlength="40">
+      </div>
+
+      <div class="control-group">
+        <label>3. Tùy chỉnh ảnh:</label>
+        <div class="range-grid">
+          <div>
+            <span style="font-size:0.8rem;font-weight:600">Phóng to / Thu nhỏ</span>
+            <input type="range" id="zoomRange" min="0.4" max="2" step="0.05" value="1" style="width:100%">
+          </div>
+          <div>
+            <span style="font-size:0.8rem;font-weight:600">Xoay nghiêng</span>
+            <input type="range" id="rotateRange" min="-30" max="30" step="1" value="0" style="width:100%">
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>4. Thêm Sticker trang trí:</label>
+        <div class="sticker-chips" id="stickerChips">
+          <div class="chip selected" data-sticker="trio">✨ Bộ Ba Chiikawa</div>
+          <div class="chip selected" data-sticker="usagiEars">🐰 Tai Thỏ Usagi</div>
+          <div class="chip" data-sticker="cap">🎓 Nón Cử Nhân</div>
+          <div class="chip selected" data-sticker="badge">🏫 Logo 12A3</div>
+          <div class="chip" data-sticker="cherry">🌸 Hoa Phượng</div>
+          <div class="chip" data-sticker="heart">💖 Trái Tim</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+        <button class="btn mint" id="btnDownload" style="flex:1">💾 Tải ảnh PNG</button>
+        <button class="btn alt" id="btnPin" style="flex:1">📌 Ghim lên Bảng Lớp</button>
+      </div>
+    </div>
+
+    <!-- KHU VỰC XEM TRƯỚC CANVAS -->
+    <div class="canvas-wrapper box">
+      <h3 style="margin-bottom:12px;font-size:1.1rem;color:var(--ink)">Màn Hình Xem Trước</h3>
+      <div class="canvas-holder">
+        <canvas id="boothCanvas" width="600" height="750"></canvas>
+      </div>
+      <small style="margin-top:8px;color:var(--muted)">Có thể kéo chuột/tay trên khung ảnh để di chuyển góc chụp!</small>
+    </div>
+  </div>
+
+  <!-- BẢNG TRƯNG BÀY KHUNG ẢNH ĐÃ GHÍM -->
+  <div style="margin-top:44px">
+    <h3>Bảng Trưng Bày Kỷ Niệm 12A3 📌</h3>
+    <p class="lead" style="margin-bottom:16px">Các bức ảnh photobooth đã được ghim lại bởi thành viên 12A3.</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</div></section>
+
+<section id="ky-niem" class="alt"><div class="wrap">
+  <h2>Hành trình năm cuối cấp</h2>
+  <p class="lead">Những cột mốc nhỏ đong đầy kỷ niệm của cả tập thể.</p>
   <div class="tl">
-    <div class="ev box" style="--c:var(--mint)"><time>Tháng 9</time><h3>Khai giảng</h3><p>Gặp lại thầy cô, bạn bè và chỗ ngồi cũ dưới gốc cây.</p></div>
-    <div class="ev box" style="--c:var(--red)"><time>Tháng 11</time><h3>Ngày Nhà giáo Việt Nam 20/11</h3><p>Văn nghệ, hoa và lời cảm ơn gửi tới thầy cô.</p></div>
-    <div class="ev box" style="--c:var(--blue)"><time>Tháng 3</time><h3>Hội trại 26/3</h3><p>Dựng lều, thi trò chơi, đốt lửa trại cùng cả khối.</p></div>
-    <div class="ev box" style="--c:var(--sun)"><time>Tháng 5</time><h3>Lễ tri ân và trưởng thành</h3><p>Buổi chụp ảnh kỷ yếu và những cái ôm thật chặt.</p></div>
-    <div class="ev box" style="--c:var(--pink)"><time>Tháng 6</time><h3>Kỳ thi tốt nghiệp THPT</h3><p>Chặng cuối của 12 năm đi học. Cố lên cả lớp.</p></div>
+    <div class="ev box" style="--c:var(--mint)"><time>Tháng 9/2026</time><h3>Lễ Khai Giảng Cuối Cùng</h3><p>Gặp lại thầy cô, bạn bè, ngồi lại chỗ cũ dưới bóng mát tán phượng thân thương.</p></div>
+    <div class="ev box" style="--c:var(--red)"><time>Tháng 11/2026</time><h3>Tri Ân Thầy Cô 20/11</h3><p>Văn nghệ bùng nổ, những bó hoa tươi thắm và lời cảm ơn chân thành gửi tới Cô Như Quỳnh.</p></div>
+    <div class="ev box" style="--c:var(--blue)"><time>Tháng 3/2027</time><h3>Hội Trại 26/3 Đáng Nhớ</h3><p>Dựng lều trại, thi trò chơi dân gian, hát ca và đốt lửa trại cùng toàn thể khối 12.</p></div>
+    <div class="ev box" style="--c:var(--sun)"><time>Tháng 5/2027</time><h3>Lễ Tri Ân & Chụp Kỷ Yếu</h3><p>Buổi chụp ảnh mặc áo cử nhân, những giọt nước mắt lăn dài và những cái ôm thật chặt.</p></div>
+    <div class="ev box" style="--c:var(--pink)"><time>Tháng 6/2027</time><h3>Kỳ Thi Tốt Nghiệp THPT</h3><p>Chặng cuối 12 năm đèn sách. Chúc 45 sĩ tử 12A3 cập bến nguyện vọng 1 rực rỡ!</p></div>
   </div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
   <div class="count box">
-    <h2>Còn bao lâu nữa đến kỳ thi?</h2>
-    <div class="nums"><div><b id="d">0</b>ngày</div><div><b id="h">0</b>giờ</div><div><b id="mi">0</b>phút</div></div>
-    <small>Đếm ngược tới ngày 26/06/2027 (ngày ước tính, có thể sửa theo lịch thi chính thức).</small>
+    <h2>Đếm ngược đến Ngày Thi Tốt Nghiệp! 🎯</h2>
+    <div class="nums">
+      <div><b id="d">0</b>ngày</div>
+      <div><b id="h">0</b>giờ</div>
+      <div><b id="mi">0</b>phút</div>
+      <div><b id="s">0</b>giây</div>
+    </div>
+    <small>Cột mốc dự kiến: 07:30 - Ngày 26/06/2027 (Cố lên 12A3 ơi, Usagi chúc cả lớp thi tốt!)</small>
   </div>
 </div></section>
 
 <section id="loi-nhan" class="alt"><div class="wrap">
-  <h2>Bức tường lời nhắn</h2>
-  <p class="lead">Viết vài dòng cho lớp. Lời nhắn chỉ lưu trên máy của bạn.</p>
+  <h2>Bức tường lời nhắn ✉️</h2>
+  <p class="lead">Viết vài dòng gửi gắm tình cảm cho 12A3. Lời nhắn sẽ được lưu giữ trên trình duyệt của bạn.</p>
   <form id="f">
-    <input id="n" placeholder="Tên của bạn" maxlength="30" required>
-    <textarea id="t" rows="3" placeholder="Bạn muốn nhắn gì với 12A3?" maxlength="140" required></textarea>
-    <button class="btn" type="submit" style="justify-self:start">Dán lên tường</button>
+    <input id="n" placeholder="Tên hoặc biệt danh của bạn" maxlength="30" required>
+    <textarea id="t" rows="3" placeholder="Bạn muốn nhắn gửi lời chúc hay kỷ niệm gì với 12A3?" maxlength="160" required></textarea>
+    <button class="btn" type="submit" style="justify-self:start">📌 Dán Lên Tường</button>
   </form>
   <div class="wall" id="wall"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <b>12A3 · THPT HOÀNG HOA THÁM</b>
+  <span>Năm học 2026 – 2027 · Chúc tất cả chúng ta một thời thanh xuân rực rỡ!</span>
+</div></footer>
+
+<script>
+/* ==========================================
+   1. BỘ TẠO MÃ SVG CHO CHIIKAWA - HACHIWARE - USAGI
+   ========================================== */
+function getMascotSVG(type, width=120, height=120) {
+  const o = 'stroke="#6b3b35" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
+  
+  // TYPE 0: CHIIKAWA (Trắng, tai tròn nhỏ, mắt tròn ngơ ngác, má hồng)
+  if (type === 0 || type === 'chiikawa') {
+    return `<svg width="${width}" height="${height}" viewBox="0 0 120 120" fill="none" xmlns="http://www.ll"></div>
 </div></section>
 </main>
 
