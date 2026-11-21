@@ -75,6 +75,35 @@ section h2::after{content:" ♡";color:var(--red)}
 .officers-featured{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-bottom:32px}
 .officer-card{background:linear-gradient(135deg,var(--cream) 0%,#fff 100%);border:3.5px solid var(--line);border-radius:22px;padding:16px;box-shadow:4px 4px 0 var(--line);text-align:center;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .officer-card:hover{transform:translateY(-5px);box-shadow:6px 6px 0 var(--line)}
+
+/* Spotlight riêng cho Nguyễn Trần Đức Lương */
+.officer-card.duc-luong-special,.member-card.duc-luong-special{
+  isolation:isolate;position:relative;overflow:visible;
+  background:linear-gradient(145deg,#fff7fb,#ffe3f2 48%,#fff5dc);
+  border-color:#d86aa8;
+  box-shadow:0 0 0 2px rgba(255,190,226,.65),0 0 18px rgba(244,143,204,.65),0 0 34px rgba(255,211,146,.5),4px 4px 0 #bd6e9c;
+  animation:ducLuongGlow 3.4s ease-in-out infinite;
+}
+.officer-card.duc-luong-special::before,.member-card.duc-luong-special::before{
+  content:"✦  ✧  ✦";position:absolute;inset:-18px -10px auto;text-align:center;
+  color:#d66da5;font-size:1.15rem;letter-spacing:.65rem;pointer-events:none;
+  animation:ducLuongSparkle 2.5s ease-in-out infinite;
+}
+.officer-card.duc-luong-special::after,.member-card.duc-luong-special::after{
+  content:"✨";position:absolute;right:-8px;bottom:-12px;font-size:1.35rem;pointer-events:none;
+  animation:ducLuongFloat 2.8s ease-in-out infinite;
+}
+.officer-card.duc-luong-special{transform:scale(1.025);z-index:1}
+.officer-card.duc-luong-special .avatar-wrap,.member-card.duc-luong-special .avatar-box{
+  border-color:#d86aa8;box-shadow:0 0 0 4px #ffe0f0,0 0 22px rgba(223,105,174,.65);
+}
+.officer-card.duc-luong-special strong,.member-card.duc-luong-special strong{color:#a34279!important}
+.member-card.duc-luong-special{grid-column:auto}
+@keyframes ducLuongGlow{0%,100%{filter:drop-shadow(0 0 2px rgba(240,151,204,.35))}50%{filter:drop-shadow(0 0 9px rgba(240,151,204,.75))}}
+@keyframes ducLuongSparkle{0%,100%{opacity:.45;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+@keyframes ducLuongFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(6deg)}}
+@media(prefers-reduced-motion:reduce){.duc-luong-special,.duc-luong-special::before,.duc-luong-special::after{animation:none!important}}
+.officer-card .officer-name{display:block;font:700 1.25rem/1.3 "Mali","Be Vietnam Pro",sans-serif;color:#4a2420;text-wrap:balance}
 .officer-card .crown{position:absolute;top:-12px;right:14px;background:var(--sun);color:#4a2420;border:2px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700;box-shadow:2px 2px 0 var(--line)}
 .officer-card .stt-badge{position:absolute;top:10px;left:12px;font:700 .78rem "Mali";color:var(--muted)}
 .officer-card .avatar-wrap{width:96px;height:96px;margin:10px auto 8px;border-radius:50%;border:3px solid var(--line);overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
@@ -88,13 +117,13 @@ section h2::after{content:" ♡";color:var(--red)}
 .f-chip{background:#fff;border:2px solid var(--line);border-radius:999px;padding:5px 14px;font:700 .82rem "Mali";color:#4a2420;cursor:pointer;transition:all .15s}
 .f-chip:hover,.f-chip.active{background:var(--pink);color:#4a2420;border-width:2.5px;box-shadow:2px 2px 0 var(--line)}
 
-.members-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.members-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
 .member-card{background:#fff;border:3px solid var(--line);border-radius:18px;padding:14px 10px;text-align:center;position:relative;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:all .15s}
 .member-card:hover{transform:translateY(-3px);box-shadow:4.5px 4.5px 0 var(--line)}
 .member-card .stt{position:absolute;top:8px;left:10px;font:700 .75rem "Mali";color:var(--muted)}
 .member-card .avatar-box{width:76px;height:76px;margin:6px auto 8px;border-radius:50%;overflow:hidden;border:2.5px solid var(--line);background:var(--bg2);display:flex;align-items:center;justify-content:center}
 .member-card .avatar-box img,.member-card .avatar-box svg{width:100%;height:100%;object-fit:cover}
-.member-card strong{display:block;font-size:.9rem;color:var(--ink);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.member-card strong{display:flex;align-items:center;justify-content:center;min-height:2.7em;font:700 1.05rem/1.3 "Mali","Be Vietnam Pro",sans-serif;color:#4a2420;margin-top:4px;white-space:normal;overflow-wrap:anywhere;text-wrap:balance}
 .member-card .role-tag{display:inline-block;margin-top:4px;font-size:.74rem;font-weight:700;background:var(--cream);color:#4a2420;border-radius:999px;padding:2px 10px;border:1.5px solid var(--line)}
 
 .modal-overlay{position:fixed;inset:0;background:rgba(58,36,40,0.65);backdrop-filter:blur(5px);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -103,9 +132,8 @@ section h2::after{content:" ♡";color:var(--red)}
 .modal-overlay.open .modal-card{transform:scale(1)}
 .modal-close{position:absolute;top:14px;right:16px;background:var(--pink);color:#4a2420;border:2.5px solid var(--line);border-radius:50%;width:34px;height:34px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-header{text-align:center;margin-bottom:16px}
-.modal-avatar-preview{width:110px;height:110px;border-radius:50%;border:4px solid var(--line);margin:0 auto 10px;overflow:hidden;background:#fff;position:relative;cursor:pointer}
+.modal-avatar-preview{width:110px;height:110px;border-radius:50%;border:4px solid var(--line);margin:0 auto 10px;overflow:hidden;background:#fff;position:relative}
 .modal-avatar-preview img,.modal-avatar-preview svg{width:100%;height:100%;object-fit:cover}
-.modal-avatar-preview::after{content:"📸 Đổi ảnh";position:absolute;bottom:0;inset-x:0;background:rgba(107,59,53,0.85);color:#fff;font-size:.7rem;font-weight:700;padding:2px 0;text-align:center}
 
 .booth-container{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 @media (max-width:880px){.booth-container{grid-template-columns:1fr}}
@@ -206,10 +234,7 @@ footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;lett
   <h2>Thành viên & Ban cán sự 12A3 🌸</h2>
   <p class="lead">Đầy đủ 45 thành viên thân yêu của đại gia đình 12A3. Bấm vào từng bạn để xem hồ sơ kỷ yếu hoặc đổi ảnh đại diện nhé!</p>
 
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
-    <h3 style="font-size:1.3rem;color:var(--ink)">👑 Ban Cán Sự & Đội Nguồn Sáng Tạo 💻</h3>
-    <button class="btn alt" id="btnEditRoles" type="button" style="padding:6px 16px;font-size:.85rem">⚙️ Quản lý Chức vụ</button>
-  </div>
+  <h3 style="font-size:1.3rem;color:var(--ink);margin-bottom:14px">👑 Ban Cán Sự & Đội Nguồn Sáng Tạo 💻</h3>
   <div class="officers-featured" id="officersFeatured"></div>
 
   <div class="filter-bar">
@@ -233,33 +258,18 @@ footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;lett
   <div class="modal-card">
     <button class="modal-close" id="modalClose" type="button" aria-label="Đóng">✕</button>
     <div class="modal-header">
-      <div class="modal-avatar-preview" id="modalAvatarTrigger" title="Nhấn để tải ảnh thật">
+      <div class="modal-avatar-preview" id="modalAvatarTrigger">
         <div id="modalAvatarBox" style="width:100%;height:100%"></div>
-        <input type="file" id="modalFileInput" accept="image/*" style="display:none">
       </div>
       <span id="modalSTT" style="font:700 0.85rem 'Mali';color:var(--muted)">STT #01</span>
-      <h3 id="modalName" style="font-size:1.4rem;color:var(--ink);margin:2px 0">Họ và Tên</h3>
+      <h3 id="modalName" style="font-size:1.7rem;font-weight:700;color:var(--ink);margin:4px 0 6px;line-height:1.25">Họ và Tên</h3>
       <span id="modalRoleBadge" class="pill" style="font-size:.8rem;padding:4px 14px;margin-top:4px">Thành viên</span>
     </div>
 
-    <form id="modalForm" style="display:grid;gap:12px">
-      <div>
-        <label style="font:700 .85rem 'Mali'">Biệt danh thân mật:</label>
-        <input type="text" id="inputNickname" placeholder="VD: Lan Cún, Lương Dev..." maxlength="25">
-      </div>
-      <div>
-        <label style="font:700 .85rem 'Mali'">Chức vụ / Nhãn:</label>
-        <input type="text" id="inputRole" placeholder="VD: Lớp trưởng, Người làm web..." maxlength="25">
-      </div>
-      <div>
-        <label style="font:700 .85rem 'Mali'">Câu nói cửa miệng / Châm ngôn kỷ yếu:</label>
-        <textarea id="inputQuote" rows="2" placeholder="Nhập câu nói đáng nhớ của bạn này..." maxlength="100"></textarea>
-      </div>
-      <div style="display:flex;gap:10px;margin-top:4px">
-        <button type="submit" class="btn mint" style="flex:1;justify-content:center">💾 Lưu Hồ Sơ</button>
-        <button type="button" id="btnResetAvatar" class="btn alt" style="padding:10px 14px;font-size:.85rem">🔄 Ảnh gốc</button>
-      </div>
-    </form>
+    <div id="modalInfo" style="display:grid;gap:10px;margin-bottom:4px">
+      <div id="modalNickRow" style="text-align:center;font-weight:700;color:var(--muted)"></div>
+      <blockquote id="modalQuote" style="margin:0;padding:12px 16px;border-radius:14px;background:var(--bg2);border:2px dashed var(--line);text-align:center;font-style:italic"></blockquote>
+    </div>
 
     <div style="margin-top:16px;padding-top:14px;border-top:2px dashed var(--line)">
       <label style="font:700 .85rem 'Mali';display:block;margin-bottom:6px">💌 Gửi lời nhắn riêng tới bạn này:</label>
@@ -496,24 +506,13 @@ const RAW_STUDENTS = [
 const FEATURED_STTS = [3, 22, 35, 25];
 const MASCOT_KINDS = ["chiikawa", "hachiware", "usagi"];
 
-let studentProfiles = {};
-try{
-  const saved = localStorage.getItem("12a3-profiles-v1");
-  if(saved) studentProfiles = JSON.parse(saved);
-}catch(e){}
-
-function saveProfiles(){
-  try{ localStorage.setItem("12a3-profiles-v1", JSON.stringify(studentProfiles)); }catch(e){}
-}
-
 function getStudentData(s){
-  const custom = studentProfiles[s.stt] || {};
   return {
     ...s,
-    nickname: custom.nickname || "",
-    role: custom.role || s.defaultRole || `Tổ ${s.g}`,
-    quote: custom.quote || s.defaultQuote || "Cùng nhau lớn lên như cây!",
-    photo: custom.photo || null
+    nickname: s.nickname || "",
+    role: s.defaultRole || `Tổ ${s.g}`,
+    quote: s.defaultQuote || "Cùng nhau lớn lên như cây!",
+    photo: s.photo || null
   };
 }
 
@@ -535,11 +534,11 @@ function renderOfficers(){
   const box = document.getElementById("officersFeatured");
   const list = RAW_STUDENTS.filter(s => FEATURED_STTS.includes(s.stt)).map(getStudentData);
   box.innerHTML = list.map((st, idx) => `
-    <div class="officer-card" onclick="openMemberModal(${st.stt})">
+    <div class="officer-card ${st.stt === 25 ? "duc-luong-special" : ""}" onclick="openMemberModal(${st.stt})">
       <span class="stt-badge">#${String(st.stt).padStart(2,"0")}</span>
-      <span class="crown">${st.stt === 25 ? "💻 Web Dev" : "👑 BCS"}</span>
+      ${st.stt === 35 ? "" : `<span class="crown">${st.stt === 25 ? "💻 Web Dev" : "👑 BCS"}</span>`}
       <div class="avatar-wrap">${getAvatarHTML(st, idx + 1)}</div>
-      <strong style="display:block;font-size:1rem;color:var(--ink)">${st.name}</strong>
+      <strong class="officer-name">${st.name}</strong>
       <div style="margin-top:6px"><span class="role-tag" style="background:#fff;border:2px solid var(--line);border-radius:999px;padding:3px 11px;font-size:.78rem;font-weight:700;display:inline-block">${st.role}</span></div>
       <small style="display:block;margin-top:6px;color:var(--muted);font-weight:600">Tổ ${st.g}</small>
     </div>
@@ -570,11 +569,11 @@ function renderMembers(){
   }
 
   grid.innerHTML = filtered.map((st, idx) => `
-    <div class="member-card" onclick="openMemberModal(${st.stt})">
+    <div class="member-card ${st.stt === 25 ? "duc-luong-special" : ""}" onclick="openMemberModal(${st.stt})">
       <span class="stt">#${String(st.stt).padStart(2,"0")}</span>
       <div class="avatar-box">${getAvatarHTML(st, st.stt + idx)}</div>
       <strong title="${st.name}">${st.name}</strong>
-      ${st.nickname ? `<div style="font-size:.75rem;color:var(--muted);font-weight:600">"${st.nickname}"</div>` : ""}
+      ${st.nickname ? `<div style="font-size:.82rem;color:#8a5f58;font-weight:600">“${st.nickname}”</div>` : ""}
       <span class="role-tag">${st.role}</span>
     </div>
   `).join("");
@@ -583,29 +582,23 @@ function renderMembers(){
 // 3. MODAL HỒ SƠ THÀNH VIÊN
 const memberModal = document.getElementById("memberModal");
 const modalClose = document.getElementById("modalClose");
-const modalForm = document.getElementById("modalForm");
-const modalFileInput = document.getElementById("modalFileInput");
-const modalAvatarTrigger = document.getElementById("modalAvatarTrigger");
 let activeModalSTT = null;
-let tempModalPhoto = null;
 
 window.openMemberModal = function(stt){
   const base = RAW_STUDENTS.find(x => x.stt === stt);
   if(!base) return;
   const st = getStudentData(base);
   activeModalSTT = stt;
-  tempModalPhoto = st.photo;
 
   document.getElementById("modalSTT").textContent = `STT #${String(st.stt).padStart(2,"0")} · Tổ ${st.g}`;
   document.getElementById("modalName").textContent = st.name;
   document.getElementById("modalRoleBadge").textContent = st.role;
-  document.getElementById("inputNickname").value = st.nickname;
-  document.getElementById("inputRole").value = st.role;
-  document.getElementById("inputQuote").value = st.quote;
+  document.getElementById("modalNickRow").textContent = st.nickname ? `“${st.nickname}”` : "";
+  document.getElementById("modalQuote").textContent = `“${st.quote}”`;
   document.getElementById("directNoteInput").value = "";
 
   const box = document.getElementById("modalAvatarBox");
-  box.innerHTML = tempModalPhoto ? `<img src="${tempModalPhoto}" alt="${st.name}">` : characterSVG(MASCOT_KINDS[stt % 3]);
+  box.innerHTML = st.photo ? `<img src="${st.photo}" alt="${st.name}">` : characterSVG(MASCOT_KINDS[stt % 3]);
 
   memberModal.classList.add("open");
 };
@@ -617,42 +610,6 @@ function closeMemberModal(){
 
 modalClose.addEventListener("click", closeMemberModal);
 memberModal.addEventListener("click", e => { if(e.target === memberModal) closeMemberModal(); });
-modalAvatarTrigger.addEventListener("click", () => modalFileInput.click());
-
-modalFileInput.addEventListener("change", e => {
-  const file = e.target.files && e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    tempModalPhoto = ev.target.result;
-    document.getElementById("modalAvatarBox").innerHTML = `<img src="${tempModalPhoto}" alt="Avatar">`;
-  };
-  reader.readAsDataURL(file);
-});
-
-document.getElementById("btnResetAvatar").addEventListener("click", () => {
-  tempModalPhoto = null;
-  document.getElementById("modalAvatarBox").innerHTML = characterSVG(MASCOT_KINDS[(activeModalSTT || 1) % 3]);
-});
-
-modalForm.addEventListener("submit", e => {
-  e.preventDefault();
-  if(!activeModalSTT) return;
-  studentProfiles[activeModalSTT] = {
-    nickname: document.getElementById("inputNickname").value.trim(),
-    role: document.getElementById("inputRole").value.trim() || "Thành viên",
-    quote: document.getElementById("inputQuote").value.trim(),
-    photo: tempModalPhoto
-  };
-  saveProfiles();
-  renderOfficers();
-  renderMembers();
-  closeMemberModal();
-});
-
-document.getElementById("btnEditRoles").addEventListener("click", () => {
-  openMemberModal(25);
-});
 
 document.getElementById("btnSendDirectNote").addEventListener("click", () => {
   const input = document.getElementById("directNoteInput");
