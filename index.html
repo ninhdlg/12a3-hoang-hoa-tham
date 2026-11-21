@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -82,6 +81,43 @@ section h2::after{content:" ♡";color:var(--red)}
 .m svg{width:100%;height:100%;display:block}
 .m strong{display:block;font-size:.95rem;color:var(--ink)}.m span{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:600;background:var(--cream);color:#4a2420;border-radius:999px;padding:3px 12px;border:2px solid var(--line)}
 
+/* NÂNG CẤP STYLES THÀNH VIÊN & MODAL HỒ SƠ */
+.officers-featured{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-bottom:32px}
+.officer-card{background:linear-gradient(135deg,var(--cream) 0%,#fff 100%);border:3.5px solid var(--line);border-radius:22px;padding:16px;box-shadow:4px 4px 0 var(--line);text-align:center;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.officer-card:hover{transform:translateY(-5px);box-shadow:6px 6px 0 var(--line)}
+.officer-card .crown{position:absolute;top:-12px;right:14px;background:var(--sun);border:2px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:700;box-shadow:2px 2px 0 var(--line)}
+.officer-card .stt-badge{position:absolute;top:10px;left:12px;font:700 .78rem "Mali";color:var(--muted)}
+.officer-card .avatar-wrap{width:96px;height:96px;margin:10px auto 8px;border-radius:50%;border:3px solid var(--line);overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
+.officer-card .avatar-wrap img{width:100%;height:100%;object-fit:cover}
+
+.filter-bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:20px;background:var(--card);padding:14px 18px;border-radius:20px;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line)}
+.search-box{flex:1;min-width:220px;position:relative}
+.search-box input{padding:8px 14px 8px 36px;border-radius:999px;font-size:.9rem}
+.search-box::before{content:"🔍";position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.9rem}
+.filter-chips{display:flex;flex-wrap:wrap;gap:6px}
+.f-chip{background:#fff;border:2px solid var(--line);border-radius:999px;padding:5px 14px;font:700 .82rem "Mali";color:#4a2420;cursor:pointer;transition:all .15s}
+.f-chip:hover,.f-chip.active{background:var(--pink);color:#4a2420;border-width:2.5px;box-shadow:2px 2px 0 var(--line)}
+
+.members-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.member-card{background:#fff;border:3px solid var(--line);border-radius:18px;padding:14px 10px;text-align:center;position:relative;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:all .15s}
+.member-card:hover{transform:translateY(-3px);box-shadow:4.5px 4.5px 0 var(--line)}
+.member-card .stt{position:absolute;top:8px;left:10px;font:700 .75rem "Mali";color:var(--muted)}
+.member-card .avatar-box{width:76px;height:76px;margin:6px auto 8px;border-radius:50%;overflow:hidden;border:2.5px solid var(--line);background:var(--bg2);display:flex;align-items:center;justify-content:center}
+.member-card .avatar-box img{width:100%;height:100%;object-fit:cover}
+.member-card strong{display:block;font-size:.9rem;color:var(--ink);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.member-card .role-tag{display:inline-block;margin-top:4px;font-size:.74rem;font-weight:700;background:var(--cream);color:#4a2420;border-radius:999px;padding:2px 10px;border:1.5px solid var(--line)}
+
+/* MODAL HỒ SƠ KỶ YẾU */
+.modal-overlay{position:fixed;inset:0;background:rgba(58,36,40,0.65);backdrop-filter:blur(5px);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-card{background:var(--card);border:4px solid var(--line);border-radius:26px;box-shadow:8px 8px 0 var(--line);width:100%;max-width:480px;padding:26px;position:relative;transform:scale(0.92);transition:transform .2s;max-height:90vh;overflow-y:auto}
+.modal-overlay.open .modal-card{transform:scale(1)}
+.modal-close{position:absolute;top:14px;right:16px;background:var(--pink);border:2.5px solid var(--line);border-radius:50%;width:34px;height:34px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-header{text-align:center;margin-bottom:16px}
+.modal-avatar-preview{width:110px;height:110px;border-radius:50%;border:4px solid var(--line);margin:0 auto 10px;overflow:hidden;background:#fff;position:relative;cursor:pointer}
+.modal-avatar-preview img{width:100%;height:100%;object-fit:cover}
+.modal-avatar-preview::after{content:"📸 Đổi ảnh";position:absolute;bottom:0;inset-x:0;background:rgba(107,59,53,0.8);color:#fff;font-size:.7rem;font-weight:700;padding:2px 0;text-align:center}
+
 .tl{border-left:4px dotted var(--line);margin-left:12px;padding-left:28px;display:grid;gap:20px}
 .ev{position:relative;padding:16px 20px;transition:transform .2s}
 .ev:hover{transform:translateX(4px)}
@@ -129,6 +165,117 @@ section h2::after{content:" ♡";color:var(--red)}
 .gallery-card img{width:100%;height:auto;border-radius:10px;border:1.5px solid var(--line);display:block}
 .gallery-card .actions{display:flex;gap:6px;width:100%;margin-top:8px}
 .gallery-card .actions button{flex:1;padding:6px;font-size:.78rem;font-family:"Mali";border-radius:10px;border:2px solid var(--line);cursor:pointer;font-weight:700}
+
+/* WALL & FORM */
+form{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
+input,textarea{font:inherit;color:var(--ink);background:var(--card);border:3px solid var(--line);border-radius:16px;padding:11px 14px;width:100%}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.note{padding:16px 18px;border:3px solid #6b3b35;border-radius:18px;color:#4a2420;font-size:.95rem;box-shadow:3px 3px 0 #6b3b35;overflow-wrap:anywhere;position:relative}
+.note b{display:block;font:700 1rem "Mali";margin-top:8px}
+
+footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:.92rem;border-top:3px dashed var(--line);margin-top:40px}
+footer b{font-family:"Mali";font-size:1.2rem;color:var(--ink);display:block;letter-spacing:.2em}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><div class="bar box">
+  <b>12A3 <span style="font-size:0.8em">♡ Chiikawa</span></b>
+  <div class="links">
+    <a href="#gioi-thieu">Giới thiệu</a>
+    <a href="#thanh-vien">Thành viên</a>
+    <a href="#photobooth">Góc ghép ảnh</a>
+    <a href="#ky-niem">Kỷ niệm</a>
+    <a href="#loi-nhan">Lời nhắn</a>
+  </div>
+</div></div></nav>
+
+<header class="hero"><div class="wrap">
+  <small>THPT HOÀNG HOA THÁM · NĂM HỌC 2026 – 2027</small>
+  <h1>12A3</h1>
+  <p class="sub">CHÚNG TÔI LÀ MỘT GIA ĐÌNH</p>
+
+  <!-- BỘ 3 NHÂN VẬT CHIIKAWA - HACHIWARE - USAGI SVG -->
+  <div class="mascots-trio" id="mascots-trio"></div>
+
+  <span class="pill">Ở bên nhau thật gần, thật vui · <b>45</b> thành viên!</span>
+  <div class="btns">
+    <a class="btn" href="#photobooth">📸 Ghép ảnh kỷ yếu</a>
+    <a class="btn alt" href="#thanh-vien">Gặp cả lớp</a>
+    <a class="btn blue" href="#loi-nhan">Để lại lời nhắn</a>
+  </div>
+</div></header>
+
+<main>
+<section id="gioi-thieu"><div class="wrap">
+  <h2>Về lớp chúng mình</h2>
+  <div class="about">
+    <p class="lead box">Chúng mình là những người bạn chung một lớp học, một sân trường và một tán phượng rực rỡ. Có đứa giỏi Toán, có đứa vẽ đẹp, có đứa lúc nào cũng mang theo đồ ăn vặt rủ cả bàn cùng ăn. Cùng nhau, 12A3 đi qua những kỳ thi căng thẳng, hội trại bùng nổ và những buổi chiều trống tiết ngập tràn tiếng cười, rồi sẽ cùng nhau tự tin bước ra thế giới rộng lớn!</p>
+    <div class="facts">
+      <div class="fact box"><b>Năm học 2026 – 2027</b><small>Năm cuối cấp đáng nhớ</small></div>
+      <div class="fact box"><b>Thầy/cô chủ nhiệm</b><small>Cô Như Quỳnh</small></div>
+      <div class="fact box"><b>Sĩ số lớp</b><small>45 Học sinh năng động</small></div>
+      <div class="fact box"><b>Khẩu hiệu 12A3</b><small>"Cùng nhau lớn lên như cây!" 🌳</small></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="thanh-vien" class="alt"><div class="wrap">
+  <h2>Thành viên & Ban cán sự 12A3 🌸</h2>
+  <p class="lead">Đầy đủ 45 thành viên thân yêu của đại gia đình 12A3. Bấm vào từng bạn để xem hồ sơ kỷ yếu hoặc đổi ảnh đại diện nhé!</p>
+
+  <!-- BAN CÁN SỰ NỔI BẬT -->
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+    <h3 style="font-size:1.3rem;color:var(--ink)">👑 Ban Cán Sự & Đội Nguồn Sáng Tạo 💻</h3>
+    <button class="btn alt" id="btnEditRoles" style="padding:6px 16px;font-size:.85rem">⚙️ Quản lý Chức vụ</button>
+  </div>
+  <div class="officers-featured" id="officersFeatured"></div>
+
+  <!-- BỘ LỌC VÀ TÌM KIẾM 45 THÀNH VIÊN -->
+  <div class="filter-bar">
+    <div class="search-box">
+      <input type="text" id="memberSearch" placeholder="Tìm tên hoặc STT (VD: Ý Lan, 22...)" maxlength="30">
+    </div>
+    <div class="filter-chips" id="filterChips">
+      <button class="f-chip active" data-filter="all">Tất cả (45)</button>
+      <button class="f-chip" data-filter="bcs">👑 Ban cán sự</button>
+      <button class="f-chip" data-filter="g1">Tổ 1</button>
+      <button class="f-chip" data-filter="g2">Tổ 2</button>
+      <button class="f-chip" data-filter="g3">Tổ 3</button>
+      <button class="f-chip" data-filter="g4">Tổ 4</button>
+    </div>
+  </div>
+
+  <!-- DANH SÁCH LƯỚI 45 HỌC SINH -->
+  <div class="members-grid" id="membersGrid"></div>
+</div></section>
+
+<!-- MODAL XEM & CHỈNH SỬA HỒ SƠ THÀNH VIÊN -->
+<div class="modal-overlay" id="memberModal">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <div class="modal-avatar-preview" id="modalAvatarTrigger" title="Nhấn để tải ảnh thật">
+        <div id="modalAvatarBox" style="width:100%;height:100%"></div>
+        <input type="file" id="modalFileInput" accept="image/*" style="display:none">
+      </div>
+      <span id="modalSTT" style="font:700 0.85rem 'Mali';color:var(--muted)">STT #01</span>
+      <h3 id="modalName" style="font-size:1.4rem;color:var(--ink);margin:2px 0">Họ và Tên</h3>
+      <span id="modalRoleBadge" class="pill" style="font-size:.8rem;padding:4px 14px;margin-top:4px">Thành viên</span>
+    </div>
+
+    <form id="modalForm" style="display:grid;gap:12px">
+      <div>
+        <label style="font:700 .85rem 'Mali'">Biệt danh thân mật:</label>
+        <input type="text" id="inputNickname" placeholder="VD: Lan Cún, Phú Chăm Chỉ..." maxlength="25">
+      </div>
+      <div>
+        <label style="font:700 .85rem 'Mali'">Chức vụ / Nhãn:</label>
+        <input type="text" id="inputRole" placeholder="VD: Lớp trưởng, Tổ 1, Thủ quỹ..." maxlength="25">
+      </div>
+      <div>
+        <label style="font:700 .85rem 'Mali'">Câu nói cửa miệng / Châm ngôn kỷ yếu:</label>
+        <textarea id="inputQuote" rows="2" placeholder="Nhập câu nói đáng nhớ của bạn này..." maxlength="100"></family:"Mali";border-radius:10px;border:2px solid var(--line);cursor:pointer;font-weight:700}
 
 /* WALL & FORM */
 form{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
